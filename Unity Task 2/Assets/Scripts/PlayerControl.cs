@@ -7,6 +7,8 @@ namespace Scripts
 {
     public class PlayerControl : MonoBehaviour
     {
+        private int time = 0;
+        
         //input for game control from player-chosen action
         public Action playerAction;
 
@@ -18,6 +20,8 @@ namespace Scripts
         
         //handles depiction of the player character's sprite
         public SpriteRenderer playerSprite;
+
+        public Sprite[] animations;
         
         //handles physics of the player character's body
         public Rigidbody2D body;
@@ -31,6 +35,8 @@ namespace Scripts
         public Transform playerFeet;
 
         public LayerMask jumpPlatform;
+        
+        
         
         public void OnEnable()
         {
@@ -54,13 +60,19 @@ namespace Scripts
                 //for our Input loads, Unity delivers pre-existing key inputs, which fit the player action
                 
                 //determines player movement on x axis based on adequate key input (e.g. A, D)
-                move_x = Input.GetAxisRaw("Horizontal");
                 Vector3 characterScale = transform.localScale;
+                move_x = Input.GetAxisRaw("Horizontal");
+                if (Input.GetAxisRaw("Horizontal") != 0)
+                {
+                    StartCoroutine(Move());
+                }
+                
+                
 
                 // if a jump button was pressed and the player is not in the air
                 if (Input.GetButtonDown("Jump") && !IsAirborne())
                 {
-                    Jump();
+                    StartCoroutine(Jump());
                 }
                 
 
@@ -77,6 +89,9 @@ namespace Scripts
                 transform.localScale = characterScale;
 
                 //StartCoroutine(GameTest());
+
+                time++;
+                Debug.Log(time);
             }
         }
 
@@ -86,10 +101,53 @@ namespace Scripts
             body.velocity = movement;
         }
 
-        void Jump()
+        private IEnumerator Move()
         {
+            for (int n = 0; n < 10; n++)
+            {
+                if (time%10 == n) playerSprite.sprite = animations[(time%30)/3];
+            }
+            
+            
+           
+            /*
+            while (moveTime < moveDuration)
+            {
+                moveTime += Time.deltaTime;
+                var currentTime = moveTime / moveDuration;
+                if (currentTime < moveDuration / 2)
+                {
+                    playerSprite.sprite = animations[0];
+                }
+                else
+                {
+                    playerSprite.sprite = animations[5];
+                }
+                
+            }
+            */
+
+            yield return 30;
+        }
+        private IEnumerator Jump()
+        {
+            var jumpTime = 0f;
+            var jumpDuration = 10f;
             Vector2 movement = new Vector2(body.velocity.x, jumpForce);
             body.velocity = movement;
+
+            while (jumpTime < jumpDuration)
+            {
+                jumpTime += Time.deltaTime;
+                var currentTime = jumpTime / jumpDuration;
+                if (currentTime < jumpDuration / 2)
+                {
+                    
+                }
+                
+            }
+
+            yield return null;
         }
 
         private IEnumerator GameTest()
