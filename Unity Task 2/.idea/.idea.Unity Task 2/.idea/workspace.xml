@@ -33,10 +33,10 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/CharacterController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Intersection.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GameControl.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerControl.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EnemyControl.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ScoreCounter.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameControl.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerControl.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1sCncRQ01TK0b0hC0RFnSlUP0nP" />
@@ -96,6 +96,11 @@
       <workItem from="1621255844050" duration="1032000" />
       <workItem from="1621257263994" duration="266000" />
       <workItem from="1621344866668" duration="2252000" />
+      <workItem from="1621445755151" duration="819000" />
+      <workItem from="1621519435883" duration="1210000" />
+      <workItem from="1621529110134" duration="1190000" />
+      <workItem from="1621592361279" duration="470000" />
+      <workItem from="1621592969045" duration="3025000" />
     </task>
     <servers />
   </component>

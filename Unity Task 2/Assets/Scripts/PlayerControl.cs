@@ -11,7 +11,6 @@ namespace Scripts
         public Action playerAction;
 
         //decides if player input is accepted
-        //not needed as of right now as only instance of stopping is ending the game, which disables the whole class anyways
         public bool playerActing;
         
         //handles character position in level
@@ -25,6 +24,13 @@ namespace Scripts
         
         public float speed;
         private float move_x;
+
+        // determine strength of player jumping
+        public float jumpForce = 5f;
+
+        public Transform playerFeet;
+
+        public LayerMask jumpPlatform;
         
         public void OnEnable()
         {
@@ -45,9 +51,18 @@ namespace Scripts
             }
             if (playerActing)
             {
+                //for our Input loads, Unity delivers pre-existing key inputs, which fit the player action
+                
                 //determines player movement on x axis based on adequate key input (e.g. A, D)
                 move_x = Input.GetAxisRaw("Horizontal");
                 Vector3 characterScale = transform.localScale;
+
+                // if a jump button was pressed and the player is not in the air
+                if (Input.GetButtonDown("Jump") && !IsAirborne())
+                {
+                    Jump();
+                }
+                
 
                 if (Input.GetAxis("Horizontal") < 0)
                 {
@@ -60,15 +75,7 @@ namespace Scripts
                 }
 
                 transform.localScale = characterScale;
-                
-                if (Input.GetKey(KeyCode.A))
-                {
-                    Debug.Log("Player moved left.");
-                }
-                if (Input.GetKey(KeyCode.D))
-                {
-                    Debug.Log("Player moved right.");
-                }
+
                 //StartCoroutine(GameTest());
             }
         }
@@ -79,9 +86,31 @@ namespace Scripts
             body.velocity = movement;
         }
 
+        void Jump()
+        {
+            Vector2 movement = new Vector2(body.velocity.x, jumpForce);
+            body.velocity = movement;
+        }
+
         private IEnumerator GameTest()
         {
             yield return null;
+        }
+
+        public bool IsAirborne()
+        {
+            // check if any ground tile collides with the players' feet
+            Collider2D isOnGround = Physics2D.OverlapCircle(playerFeet.position, 0.5f, jumpPlatform);
+
+            // if no collision of the feet with the ground was detected
+            if (isOnGround == null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

@@ -135,9 +135,9 @@ GameObject:
   - component: {fileID: 30962170}
   - component: {fileID: 30962169}
   - component: {fileID: 30962168}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5057,6 +5057,7 @@ Transform:
   m_Children:
   - {fileID: 1517325457}
   - {fileID: 1936648581}
+  - {fileID: 904083145}
   m_Father: {fileID: 515388913}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5128,6 +5129,11 @@ MonoBehaviour:
   playerSprite: {fileID: 1936648582}
   body: {fileID: 321588218}
   speed: 4
+  jumpForce: 5
+  feet: {fileID: 904083145}
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!50 &321588218
 Rigidbody2D:
   serializedVersion: 4
@@ -5643,6 +5649,36 @@ Transform:
   - {fileID: 272770376}
   m_Father: {fileID: 196229083}
   m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &904083144
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 904083145}
+  m_Layer: 0
+  m_Name: Feet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &904083145
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904083144}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.12, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 321588215}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &909480057
 GameObject:

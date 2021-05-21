@@ -17,7 +17,7 @@ namespace Scripts
 
         private float startingTime;
 
-    // Start = called before the first frame update
+        // Start = called before the first frame update
         void Start()
         {
             //mark game as having started in the beginning
@@ -35,7 +35,7 @@ namespace Scripts
             //initialize starting time to be assessed time
             startingTime = Time.time;
         }
-        
+
         //onDisable = Unity runtime function called after game component is disabled
         private void OnDisable()
         {
@@ -48,15 +48,16 @@ namespace Scripts
         {
             //if the game is running, press 1 to end it
             if (gameRunning!)
-            {
+            { 
                 //don't accept player input if the game is not running anymore
                 // if (plCon.playerActing) plCon.playerActing = false;
             }
+
             if (gameRunning)
             {
                 //test for checking if game is actually running
                 //Debug.Log("Game is running.");
-                
+
                 //end game if "1" is pressed
                 if (Input.GetKey(KeyCode.Alpha1))
                 {
@@ -68,5 +69,3 @@ namespace Scripts
         }
     }
 }
-
-
