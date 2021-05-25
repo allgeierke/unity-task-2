@@ -14177,7 +14177,16 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 859d202d134124591a5842707b580b94, type: 3}
   - {fileID: 21300000, guid: 06b3f0daa00894c0f8ac73dc16fff014, type: 3}
   - {fileID: 21300000, guid: fec626f322ed4400b9f33172d1ff4dbe, type: 3}
-  - {fileID: 21300000, guid: 2a5c2f3ca4ae14e7e91149316db1e054, type: 3}
+  - {fileID: 21300000, guid: c2c08c932c2054a0da13bc4dd9db298d, type: 3}
+  - {fileID: 21300000, guid: 9acc6d9857bd54a4aa5d0b2d7967fb9d, type: 3}
+  - {fileID: 21300000, guid: 88936927cde504f29a30a3104502824a, type: 3}
+  - {fileID: 21300000, guid: 8c2d576730d854e2c88dc5fb039176b2, type: 3}
+  - {fileID: 21300000, guid: 0e29aedd0b9e343acba7cdd247eb8207, type: 3}
+  - {fileID: 21300000, guid: 47ab6493d16df4bf7a5f36e9e19523ab, type: 3}
+  - {fileID: 21300000, guid: fe8c3f8f5e0214a78a5d98c45c8faa47, type: 3}
+  - {fileID: 21300000, guid: ad83644368491474282314cfcffc471c, type: 3}
+  - {fileID: 21300000, guid: 7346cc2d80f75454fa091610ef441ea1, type: 3}
+  - {fileID: 21300000, guid: 2000cc4268e4740f7a38a8299b354d71, type: 3}
   body: {fileID: 321588218}
   speed: 4
   jumpForce: 6
@@ -14196,8 +14205,8 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
+  m_UseAutoMass: 1
+  m_Mass: 1.6793369
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0.5

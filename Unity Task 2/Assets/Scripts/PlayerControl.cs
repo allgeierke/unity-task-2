@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Linq;
+using UnityEditor.UI;
 using UnityEngine;
 
 namespace Scripts
@@ -55,31 +56,36 @@ namespace Scripts
             {
 
             }
+
             if (playerActing)
             {
-                //for our Input loads, Unity delivers pre-existing key inputs, which fit the player action
-                
-                //determines player movement on x axis based on adequate key input (e.g. A, D)
                 Vector3 characterScale = transform.localScale;
-                move_x = Input.GetAxisRaw("Horizontal");
-                if (Input.GetAxisRaw("Horizontal") != 0)
-                {
-                    Move();
-                }
-                else
-                {
-                    playerSprite.sprite = animations[10];
-                }
                 
-                
+                //for our Input loads, Unity delivers pre-existing key inputs, which fit the player action
 
-                // if a jump button was pressed and the player is not in the air
-                if (Input.GetButtonDown("Jump") && !IsAirborne())
+                //determines player movement on x axis based on adequate key input (e.g. A, D)
+                move_x = Input.GetAxisRaw("Horizontal");
+                
+                // if the player character stands on solid ground
+                if (!IsAirborne()) {
+                    
+                    Idle();
+                    
+                if (Input.GetButtonDown("Jump"))
                 {
                     StartCoroutine(Jump());
                 }
-                
 
+                // if the player moves in either direction
+                
+                else if (Input.GetAxisRaw("Horizontal") != 0)
+                {
+                    Move();
+                    
+                }
+
+                }
+                
                 if (Input.GetAxis("Horizontal") < 0)
                 {
                     characterScale.x = -5;
@@ -89,12 +95,10 @@ namespace Scripts
                 {
                     characterScale.x = 5;
                 }
-
+                
                 transform.localScale = characterScale;
-
-                //StartCoroutine(GameTest());
-
                 time++;
+                
                 //Debug.Log(time);
             }
         }
@@ -105,32 +109,21 @@ namespace Scripts
             body.velocity = movement;
         }
 
+        private void Idle()
+        {
+            for (int n = 10; n <= 13; n++)
+            {
+                if ((time % 4) + 10 == n) playerSprite.sprite = animations[((time % 20)/5)+10];
+            }
+        }
         private void Move()
         {
-            for (int n = 0; n < 10; n++)
+            for (int n = 0; n <= 9; n++)
             {
                 if (time%10 == n) playerSprite.sprite = animations[(time%30)/3];
             }
-            
-            
-           
-            /*
-            while (moveTime < moveDuration)
-            {
-                moveTime += Time.deltaTime;
-                var currentTime = moveTime / moveDuration;
-                if (currentTime < moveDuration / 2)
-                {
-                    playerSprite.sprite = animations[0];
-                }
-                else
-                {
-                    playerSprite.sprite = animations[5];
-                }
-                
-            }
-            */
         }
+        
         private IEnumerator Jump()
         {
             var jumpTime = 0f;
@@ -142,7 +135,7 @@ namespace Scripts
             {
                 jumpTime += Time.deltaTime;
                 var currentTime = jumpTime / jumpDuration;
-                if (currentTime < jumpDuration / 2)
+                if (currentTime < jumpDuration)
                 {
                     
                 }
