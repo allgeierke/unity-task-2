@@ -14,6 +14,7 @@ public class MainMenu : MonoBehaviour
   }
 
   // If "Quit" is pressed, the game will not start and we will see a message in the console that we quit the game
+  // if build is used, the game will quit
   public void Quit()
   {
     Debug.Log("You Quit!");

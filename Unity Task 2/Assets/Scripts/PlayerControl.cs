@@ -91,7 +91,7 @@ namespace Scripts
                 //StartCoroutine(GameTest());
 
                 time++;
-                Debug.Log(time);
+                //Debug.Log(time);
             }
         }
 
