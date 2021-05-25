@@ -8,37 +8,47 @@ public class PauseMenu : MonoBehaviour
 {
 
     // the game is not paused 
-    public static bool PausedGame = false;
+   public static bool PausedGame = false;
 
-    public GameObject pauseMenuUI;
+    public GameObject pauseMenu;
     // Update is called once per frame
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.KeypadEnter))
-        {
-            if (PausedGame)
-            {
-                Resume();
+
+        if (Input.GetKeyDown(KeyCode.P))
+            SceneManager.LoadScene("PauseMenu");
+
+     /*   {
+                if (PausedGame)
+                {
+                    Resume();
+                }
+                else
+                {
+                    Pause();
+                }
             }
-            else
-            {
-                Pause();
-            }
-        }
+        */
+        
+    }
+
+
+    public void Pause()
+    {
+        // if (Input.GetKeyDown(KeyCode.P)) 
+        // SceneManager.LoadScene("PauseMenu");
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0f;
+        // PausedGame = true;
     }
 
     public void Resume()
     {
-        pauseMenuUI.SetActive(false);
+        pauseMenu.SetActive(false);
         Time.timeScale = 1f;
-
-    }
-
-    void Pause()
-    {
-        pauseMenuUI.SetActive(true);
-        Time.timeScale = 0f;
-        PausedGame = true;
+      //  SceneManager.LoadScene("SampleScene");
+       
 
     }
 
@@ -52,10 +62,10 @@ public class PauseMenu : MonoBehaviour
     {
         Debug.Log("Exit ...");
         Application.Quit();
-        
-        
+
+
         // quits the game also in console not only in build
-        
+
         /* oder  Debug.Log ("You have quit the game");
         if (UnityEditor.EditorApplication.isPlaying == true) {
             UnityEditor.EditorApplication.isPlaying = false;
@@ -63,5 +73,6 @@ public class PauseMenu : MonoBehaviour
             Application.Quit ();
         }*/
     }
-    
 }
+    
+
