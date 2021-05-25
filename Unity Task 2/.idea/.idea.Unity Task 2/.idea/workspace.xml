@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dea6398d-19ea-4e6c-a88e-041f8993929e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PauseMenu.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PauseMenu.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity Task 2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity Task 2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Build.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerControl.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,8 +42,8 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/GameControl.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ScoreCounter.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerControl.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PauseMenu.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerControl.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1sCncRQ01TK0b0hC0RFnSlUP0nP" />
@@ -115,6 +110,7 @@
       <workItem from="1621592969045" duration="3616000" />
       <workItem from="1621603058079" duration="1657000" />
       <workItem from="1621863616843" duration="7023000" />
+      <workItem from="1621946999568" duration="292000" />
     </task>
     <servers />
   </component>
@@ -133,6 +129,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />

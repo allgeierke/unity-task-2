@@ -21,7 +21,7 @@ namespace Scripts
         //handles depiction of the player character's sprite
         public SpriteRenderer playerSprite;
 
-        public Sprite[] animations;
+        [SerializeField]   public Sprite[] animations;
         
         //handles physics of the player character's body
         public Rigidbody2D body;
@@ -64,7 +64,11 @@ namespace Scripts
                 move_x = Input.GetAxisRaw("Horizontal");
                 if (Input.GetAxisRaw("Horizontal") != 0)
                 {
-                    StartCoroutine(Move());
+                    Move();
+                }
+                else
+                {
+                    playerSprite.sprite = animations[10];
                 }
                 
                 
@@ -101,7 +105,7 @@ namespace Scripts
             body.velocity = movement;
         }
 
-        private IEnumerator Move()
+        private void Move()
         {
             for (int n = 0; n < 10; n++)
             {
@@ -126,8 +130,6 @@ namespace Scripts
                 
             }
             */
-
-            yield return 30;
         }
         private IEnumerator Jump()
         {
