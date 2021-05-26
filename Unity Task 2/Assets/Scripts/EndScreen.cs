@@ -22,8 +22,8 @@ public class EndScreen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>().curHealth;
-       Alien = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyControl>().amount;
+    /*    //playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>().curHealth;
+      // Alien = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyControl>().amount;
 
         //If health is at 0 the Lose screen pops up and the game will stop
         
@@ -38,7 +38,7 @@ public class EndScreen : MonoBehaviour
             avatar2.gameObject.SetActive(true);
             Time.timeScale = 0;
         }
-    }
+    }*/
             SceneManager.LoadScene("EndMenu");
 
         
