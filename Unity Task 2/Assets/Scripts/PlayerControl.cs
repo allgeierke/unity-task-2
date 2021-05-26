@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Linq;
-using UnityEditor.UI;
 using UnityEngine;
 
 namespace Scripts
@@ -113,14 +112,14 @@ namespace Scripts
         {
             for (int n = 10; n <= 13; n++)
             {
-                if ((time % 4) + 10 == n) playerSprite.sprite = animations[((time % 20)/5)+10];
+                if ((time % 4) + 10 == n) playerSprite.sprite = animations[((time % 200)/50)+10];
             }
         }
         private void Move()
         {
             for (int n = 0; n <= 9; n++)
             {
-                if (time%10 == n) playerSprite.sprite = animations[(time%30)/3];
+                if (time%10 == n) playerSprite.sprite = animations[(time%300)/30];
             }
         }
         
