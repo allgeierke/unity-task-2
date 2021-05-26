@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class EnemyControl : MonoBehaviour
 {
+    public int amount;
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +16,7 @@ public class EnemyControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       // amount = Enemy.Count;
     }
     
     private void OnTriggerEnter2D(Collider2D other)
