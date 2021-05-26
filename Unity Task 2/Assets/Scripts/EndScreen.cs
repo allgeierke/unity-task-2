@@ -10,7 +10,7 @@ public class EndScreen : MonoBehaviour
 
     public GameObject GameEnd;
     
-    public GameObject avatar1, avatar2;
+   /* public GameObject avatar1, avatar2;
     private int Alien;
     //private int playerHealth;
     void Start()
@@ -22,7 +22,7 @@ public class EndScreen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    /*    //playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>().curHealth;
+       //playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>().curHealth;
       // Alien = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyControl>().amount;
 
         //If health is at 0 the Lose screen pops up and the game will stop
@@ -39,6 +39,9 @@ public class EndScreen : MonoBehaviour
             Time.timeScale = 0;
         }
     }*/
+   void Update()
+   {
+   
             SceneManager.LoadScene("EndMenu");
 
         

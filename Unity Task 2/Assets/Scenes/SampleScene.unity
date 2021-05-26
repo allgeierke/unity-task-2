@@ -14253,6 +14253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e464d4dcc2804413ea782807e80c41c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  amount: 0
 --- !u!1 &328303969
 GameObject:
   m_ObjectHideFlags: 0
@@ -20044,7 +20045,7 @@ GameObject:
   - component: {fileID: 1568401574}
   m_Layer: 0
   m_Name: Enemy Character2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20761,7 +20762,7 @@ GameObject:
   - component: {fileID: 1693169330}
   m_Layer: 0
   m_Name: FinalBoss
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
