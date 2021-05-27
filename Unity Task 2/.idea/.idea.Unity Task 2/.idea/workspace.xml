@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dea6398d-19ea-4e6c-a88e-041f8993929e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Other Assets/PlayerPhysik.physicsMaterial2D" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity Task 2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity Task 2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerControl.cs" afterDir="false" />
     </list>
@@ -117,7 +118,8 @@
       <workItem from="1621946999568" duration="3745000" />
       <workItem from="1622027220034" duration="2171000" />
       <workItem from="1622029990817" duration="1209000" />
-      <workItem from="1622054040931" duration="1123000" />
+      <workItem from="1622054040931" duration="1531000" />
+      <workItem from="1622116948745" duration="1615000" />
     </task>
     <servers />
   </component>
