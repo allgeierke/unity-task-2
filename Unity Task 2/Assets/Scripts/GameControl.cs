@@ -11,66 +11,49 @@ namespace Scripts
 {
     public class GameControl : MonoBehaviour
     {
+        // script for handling player action
         [SerializeField] public PlayerControl playerControl;
 
         //determines if the game has been started
         public bool gameRunning;
-
-        public EndScreen gameOver;
-
-        private float startingTime;
-
+        
         // Start = called before the first frame update
         void Start()
         {
-            //mark game as having started in the beginning
-            gameRunning = true;
 
-            playerControl.enabled = true;
         }
 
         //onEnable = Unity runtime function called after game component is enabled
         public void OnEnable()
         {
-            //mark game as running upon enabling
-            //gameRunning = true;
             Debug.Log("Game has started!");
-            //initialize starting time to be assessed time
-            startingTime = Time.time;
         }
 
         //onDisable = Unity runtime function called after game component is disabled
         private void OnDisable()
         {
-            //if script is disabled, game is marked as stopped (really needed though?)
-            //gameRunning = false;
+            
         }
 
         // Update is called once per frame
         public void Update()
         {
-            //if the game is running, press 1 to end it
-            if (gameRunning!)
-            { 
-                //don't accept player input if the game is not running anymore
-                // if (plCon.playerActing) plCon.playerActing = false;
-                
-            }
-
-            if (gameRunning)
-            {
-                //test for checking if game is actually running
-                //Debug.Log("Game is running.");
-
-                //end game if "1" is pressed
+            //test case if "1" is pressed
                 if (Input.GetKey(KeyCode.Alpha1))
                 {
-                    gameRunning = false;
-                    playerControl.enabled = false;
-                    SceneManager.LoadScene("EndMenu");
-                    Debug.Log("Game over!");
+
                 }
-            }
+                //test case if "2" is pressed
+                if (Input.GetKey(KeyCode.Alpha2))
+                {
+
+                }
+                //test case if "3" is pressed
+                if (Input.GetKey(KeyCode.Alpha3))
+                {
+
+                }
+                
         }
     }
 }
