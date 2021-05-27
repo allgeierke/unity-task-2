@@ -7,36 +7,38 @@ namespace Scripts
 {
     public class PlayerControl : MonoBehaviour
     {
-        private int time = 0;
-        
-        //input for game control from player-chosen action
-        public Action playerAction;
-
         //decides if player input is accepted
         public bool playerActing;
         
-        //handles character position in level
+        // current variable for counting updates. to be replaced
+        private float time = 0;
+        
+        //handles character position in level (unused yet)
         public Transform playerPos; 
         
         //handles depiction of the player character's sprite
         public SpriteRenderer playerSprite;
 
-        [SerializeField]   public Sprite[] animations;
-        
         //handles physics of the player character's body
         public Rigidbody2D body;
         
-        public float speed;
-        private float move_x;
+        // speed of the player character
+        [SerializeField] public float speed;
+        
+        // left/right movement determined by player input
+        private float movement;
+        
+        // determines area of player feet for ground collision detection
+        public Transform playerFeet;
 
         // determine strength of player jumping
         public float jumpForce = 5f;
-
-        public Transform playerFeet;
-
+        
+        // mask with all tiles tagged for allowing jumping
         public LayerMask jumpPlatform;
         
-        
+        // collection of all used sprites for player animation
+        [SerializeField] public Sprite[] animations;
         
         public void OnEnable()
         {
@@ -58,45 +60,57 @@ namespace Scripts
 
             if (playerActing)
             {
+                // save character's scale in variable
                 Vector3 characterScale = transform.localScale;
                 
-                //for our Input loads, Unity delivers pre-existing key inputs, which fit the player action
-
-                //determines player movement on x axis based on adequate key input (e.g. A, D)
-                move_x = Input.GetAxisRaw("Horizontal");
+                
+                
+                // calculates movement with the given x input, the chosen player speed & the body's current velocity
+                body.velocity  = new Vector2(movement * speed, body.velocity.y);
                 
                 // if the player character stands on solid ground
                 if (!IsAirborne()) {
                     
+                    // load idle animation
                     Idle();
                     
-                if (Input.GetButtonDown("Jump"))
+                    //determines player movement on x axis based on adequate key input (e.g. A, D)
+                    movement = Input.GetAxisRaw("Horizontal");
+                    
+                    //for our Input loads, Unity delivers pre-existing key inputs, which fit the player action
+
+                    // if a jump button is pressed
+                    if (Input.GetButtonDown("Jump"))
                 {
+                    // calculate player jump
                     StartCoroutine(Jump());
                 }
 
                 // if the player moves in either direction
-                
-                else if (Input.GetAxisRaw("Horizontal") != 0)
-                {
-                    Move();
+                    else if (Input.GetAxisRaw("Horizontal") != 0)
+                    {
+                        // animate movement
+                        Move();
+                    }
+                    // reset x movement when there's no player input
+                    else movement = 0;
                     
-                }
-
-                }
-               
-                
+                    // turn player sprite left if facing left
                 if (Input.GetAxis("Horizontal") < 0)
                 {
                     characterScale.x = -5;
                 }
-
-                if (Input.GetAxis("Horizontal") > 0)
+                // turn right if facing right
+                else if (Input.GetAxis("Horizontal") > 0)
                 {
                     characterScale.x = 5;
                 }
+                }
                 
+                // update character scale
                 transform.localScale = characterScale;
+                
+                // update update method call timer
                 time++;
                 
                 //Debug.Log(time);
@@ -105,65 +119,43 @@ namespace Scripts
 
         private void FixedUpdate()
         {
-            Vector2 movement = new Vector2(move_x * speed, body.velocity.y);
-            body.velocity = movement;
+            
         }
 
         private void Idle()
         {
             for (int n = 10; n <= 13; n++)
             {
-                if ((time % 4) + 10 == n) playerSprite.sprite = animations[((time % 40)/10)+10];
+                if ((int) time % 4 + 10 == n) playerSprite.sprite = animations[(int) (time % 40/10)+10];
             }
         }
         private void Move()
         {
             for (int n = 0; n <= 9; n++)
             {
-                if (time%10 == n) playerSprite.sprite = animations[(time%50)/5];
+                if ((int) time%10 == n) playerSprite.sprite = animations[(int) (time%50)/5];
             }
         }
         
         private IEnumerator Jump()
         {
-            var jumpTime = 0f;
-            var jumpDuration = 10f;
-            Vector2 movement = new Vector2(body.velocity.x, jumpForce);
-            body.velocity = movement;
-
-            while (jumpTime < jumpDuration)
-            {
-                jumpTime += Time.deltaTime;
-                var currentTime = jumpTime / jumpDuration;
-                if (currentTime < jumpDuration)
-                {
-                    
-                }
-                
-            }
-
-            yield return null;
-        }
-
-        private IEnumerator GameTest()
-        {
+            // jump movement calculated by body's velocity and chosen jump force
+            body.velocity = new Vector2(body.velocity.x, jumpForce);
             yield return null;
         }
 
         public bool IsAirborne()
         {
             // check if any ground tile collides with the players' feet
-            Collider2D isOnGround = Physics2D.OverlapCircle(playerFeet.position, 0.5f, jumpPlatform);
+            Collider2D collisionWithGround= Physics2D.OverlapCircle(playerFeet.position, 0.5f, jumpPlatform);
 
             // if no collision of the feet with the ground was detected
-            if (isOnGround == null)
+            if (collisionWithGround == null)
             {
                 return true;
             }
-            else
-            {
-                return false;
-            }
+
+            return false;
         }
     }
 }

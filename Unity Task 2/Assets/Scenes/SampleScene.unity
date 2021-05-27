@@ -14166,6 +14166,13 @@ MonoBehaviour:
   playerActing: 1
   playerPos: {fileID: 1517325457}
   playerSprite: {fileID: 321588216}
+  body: {fileID: 321588218}
+  speed: 4
+  playerFeet: {fileID: 904083145}
+  jumpForce: 6
+  jumpPlatform:
+    serializedVersion: 2
+    m_Bits: 8
   animations:
   - {fileID: 21300000, guid: 2109e8f1bd0074351809bf182a9be8c7, type: 3}
   - {fileID: 21300000, guid: 2a09cf6a9896e4baeaf75ea1dd1bb1cd, type: 3}
@@ -14188,13 +14195,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7346cc2d80f75454fa091610ef441ea1, type: 3}
   - {fileID: 21300000, guid: 2000cc4268e4740f7a38a8299b354d71, type: 3}
   - {fileID: 21300000, guid: 01c74af445a534c5b8bf530fc3d0de1b, type: 3}
-  body: {fileID: 321588218}
-  speed: 4
-  jumpForce: 6
-  playerFeet: {fileID: 904083145}
-  jumpPlatform:
-    serializedVersion: 2
-    m_Bits: 8
 --- !u!50 &321588218
 Rigidbody2D:
   serializedVersion: 4
@@ -14207,7 +14207,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 1.7123555
+  m_Mass: 0.9253268
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0.5
@@ -14229,7 +14229,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.01668439, y: -0.044418693}
+  m_Offset: {x: -0.002394151, y: -0.0354873}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -14240,7 +14240,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.17733343, y: 0.38624537}
+  m_Size: {x: 0.09159199, y: 0.40410817}
   m_EdgeRadius: 0
 --- !u!114 &321588220
 MonoBehaviour:
@@ -16544,8 +16544,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 904083144}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.25, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.07, y: -0.16, z: 0}
+  m_LocalScale: {x: 0.0001, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 321588215}
   m_RootOrder: 1
@@ -16677,6 +16677,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerControl: {fileID: 321588217}
   gameRunning: 0
+  gameOver: {fileID: 0}
 --- !u!1 &935510808
 GameObject:
   m_ObjectHideFlags: 0

@@ -25,8 +25,6 @@ public class EnemyControl : MonoBehaviour
         {
             // This scene HAS TO BE IN THE BUILD SETTINGS!!!
             SceneManager.LoadScene("EndMenu");
-                
-
         }
     }
 }
