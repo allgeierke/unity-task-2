@@ -41,14 +41,23 @@ public class EndScreen : MonoBehaviour
     }*/
    void Update()
    {
-   
+            if (Input.GetKeyDown(KeyCode.M))
             SceneManager.LoadScene("EndMenu");
 
         
     }
+   
+   public void End()
+   {
+   
+       GameEnd.SetActive(true);
+       Time.timeScale = 0f;
+      
+   }
 
     public void PlayAgain()
     {
+      //  GameEnd.SetActive(false);
         Time.timeScale = 1f;
         SceneManager.LoadScene("SampleScene");
     }
