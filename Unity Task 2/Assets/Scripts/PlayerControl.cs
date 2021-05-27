@@ -84,6 +84,7 @@ namespace Scripts
                 }
 
                 }
+               
                 
                 if (Input.GetAxis("Horizontal") < 0)
                 {
@@ -112,14 +113,14 @@ namespace Scripts
         {
             for (int n = 10; n <= 13; n++)
             {
-                if ((time % 4) + 10 == n) playerSprite.sprite = animations[((time % 200)/50)+10];
+                if ((time % 4) + 10 == n) playerSprite.sprite = animations[((time % 40)/10)+10];
             }
         }
         private void Move()
         {
             for (int n = 0; n <= 9; n++)
             {
-                if (time%10 == n) playerSprite.sprite = animations[(time%300)/30];
+                if (time%10 == n) playerSprite.sprite = animations[(time%50)/5];
             }
         }
         

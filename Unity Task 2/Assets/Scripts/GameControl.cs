@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 //for more info on the the OnEnable and Update methods
 //see: https://docs.unity3d.com/Manual/ExecutionOrder.html
@@ -14,6 +15,8 @@ namespace Scripts
 
         //determines if the game has been started
         public bool gameRunning;
+
+        public EndScreen gameOver;
 
         private float startingTime;
 
@@ -51,6 +54,7 @@ namespace Scripts
             { 
                 //don't accept player input if the game is not running anymore
                 // if (plCon.playerActing) plCon.playerActing = false;
+                
             }
 
             if (gameRunning)
@@ -63,7 +67,8 @@ namespace Scripts
                 {
                     gameRunning = false;
                     playerControl.enabled = false;
-                    Debug.Log("Game ended!");
+                    SceneManager.LoadScene("EndMenu");
+                    Debug.Log("Game over!");
                 }
             }
         }

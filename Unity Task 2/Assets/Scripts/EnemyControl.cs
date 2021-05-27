@@ -24,7 +24,7 @@ public class EnemyControl : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             // This scene HAS TO BE IN THE BUILD SETTINGS!!!
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("EndMenu");
                 
 
         }
