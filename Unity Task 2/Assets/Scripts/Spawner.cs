@@ -46,14 +46,8 @@ public class Spawner : MonoBehaviour
 
    private void OnTriggerEnter2D(Collider2D other)
    {
-      
-        if (other.CompareTag("Spawner")) ;
+       if (other.CompareTag("Spawner")) ;
         triggered = true;
     }
-    
    
-   
-   
-   
-
 }
