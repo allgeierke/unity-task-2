@@ -50,12 +50,7 @@ namespace Scripts
             // calculates movement with the given x input, the chosen player speed & the body's current velocity
             body.velocity = new Vector2(moveInput * speed * Time.deltaTime, body.velocity.y);
             
-            // if a jump button is pressed
-            if (Input.GetButtonDown("Jump"))
-            {
-                // calculate player jump
-                StartCoroutine(Jump());
-            }
+            
             }
         }
         
@@ -65,19 +60,24 @@ namespace Scripts
             // save character's scale in variable
             Vector3 characterScale = transform.localScale;
             
-            
-            
             // if the player character stands on solid ground
             if (!IsAirborne())
             {
                 //determines player movement on x axis based on adequate key input (e.g. A, D)
                 moveInput = Input.GetAxisRaw("Horizontal");
                 
-                // load idle animation
+                // if a jump button is pressed
+                if (Input.GetButtonDown("Jump"))
+                {
+                    // calculate player jump
+                    StartCoroutine(Jump());
+                } else {
+                    
+                    // load idle animation
                 StartCoroutine(Idle());
                 
                 // if the player moves in either direction
-                if (!Input.GetButtonDown("Jump") && Input.GetAxisRaw("Horizontal") != 0)
+                if (Input.GetAxisRaw("Horizontal") != 0)
                 {
                     // animate movement
                     StartCoroutine(Move());
@@ -93,6 +93,7 @@ namespace Scripts
                 else if (Input.GetAxis("Horizontal") > 0)
                 {
                     characterScale.x = 5;
+                }
                 }
             }
 
@@ -111,6 +112,7 @@ namespace Scripts
             // idle animations from 10 to 13
             for (int n = 10; n <= 13; n++)
             {
+                if (moveInput != 0) StopCoroutine(Idle());
                 if ((int) time % 4 + 10 == n) playerSprite.sprite = animations[(int) (time % 4) + 10];
             }
 
