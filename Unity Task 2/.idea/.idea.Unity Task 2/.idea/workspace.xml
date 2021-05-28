@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="dea6398d-19ea-4e6c-a88e-041f8993929e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity Task 2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity Task 2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerControl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +24,7 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Collect.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -44,6 +47,8 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameControl.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerControl.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Collect1.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Collect.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1sCncRQ01TK0b0hC0RFnSlUP0nP" />
@@ -124,6 +129,10 @@
       <workItem from="1622054040931" duration="1531000" />
       <workItem from="1622116948745" duration="7676000" />
       <workItem from="1622200067888" duration="11674000" />
+      <workItem from="1622220669098" duration="1334000" />
+      <workItem from="1622223603543" duration="767000" />
+      <workItem from="1622224903980" duration="44000" />
+      <workItem from="1622225186746" duration="1443000" />
     </task>
     <servers />
   </component>
