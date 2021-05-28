@@ -11,11 +11,8 @@ namespace Scripts
 {
     public class GameControl : MonoBehaviour
     {
-        // script for handling player action
-        [SerializeField] public PlayerControl playerControl;
-
-        //determines if the game has been started
-        public bool gameRunning;
+        
+        
         
         // Start = called before the first frame update
         void Start()
