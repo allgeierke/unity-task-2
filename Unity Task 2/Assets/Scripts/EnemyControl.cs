@@ -7,7 +7,12 @@ using UnityEngine.SceneManagement;
 public class EnemyControl : MonoBehaviour
 {
     public int amount;
+
+    public bool enemyActing;
     
+    public SpriteRenderer enemySprite;
+    // collection of all used sprites for player animation
+    [SerializeField] public Sprite[] animations;
     //handles physics of the enemy character's body
     public Rigidbody2D body;
     // determines area of enemy feet for ground collision detection
@@ -20,6 +25,10 @@ public class EnemyControl : MonoBehaviour
     public float time;
     // mask with all tiles the enemy can stand on
     public LayerMask canStandOn;
+
+    public BoxCollider2D collider;
+
+    public Animator anim;
     
    /* public float moveSpeed = 3f;
     Transform leftWay, rightWay;
@@ -30,6 +39,7 @@ public class EnemyControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        enemyActing = true;
         speed = 50;
         direction = 1;
         time = 0;
@@ -46,6 +56,7 @@ public class EnemyControl : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (enemyActing)
         {
             if (checkForEdge())
             {
@@ -55,6 +66,26 @@ public class EnemyControl : MonoBehaviour
             }
         }
         
+    }
+
+    private void OnDisable()
+    {
+
+
+    }
+
+    private IEnumerator EnemyDeath()
+    {
+
+        anim.speed = 0;
+        enemyActing = false;
+        body.gravityScale = 0;
+        body.constraints = RigidbodyConstraints2D.None;
+        body.velocity = new Vector2(body.velocity.x, body.velocity.y-0.2f);
+        collider.isTrigger = false;
+        enemySprite.color = Color.red;
+        this.enabled = false;
+        yield return null;
     }
 
     // Update is called once per frame
@@ -127,4 +158,5 @@ public class EnemyControl : MonoBehaviour
         transform.localScale = localScale;
         rb.velocity = new Vector2(localScale.x * moveSpeed, rb.velocity.y);
     }*/
+
 }

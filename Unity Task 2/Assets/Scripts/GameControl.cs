@@ -11,15 +11,12 @@ namespace Scripts
 {
     public class GameControl : MonoBehaviour
     {
-        
-        
-        
         // Start = called before the first frame update
         void Start()
         {
 
         }
-
+ 
         //onEnable = Unity runtime function called after game component is enabled
         public void OnEnable()
         {
