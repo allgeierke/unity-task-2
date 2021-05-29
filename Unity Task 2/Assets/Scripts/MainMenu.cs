@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 // Source: https://www.youtube.com/watch?v=zc8ac_qUXQY
 public class MainMenu : MonoBehaviour
 
-// If "Play" is pressed the game will start and we see our Scene
+// If "Play" is pressed the game will start and we see our SampleScene
 {
   public void Play()
   {
-    SceneManager.LoadScene("SampleScene");
+    SceneManager.LoadScene("Level1");
   }
 
   // If "Quit" is pressed, the game will not start and we will see a message in the console that we quit the game

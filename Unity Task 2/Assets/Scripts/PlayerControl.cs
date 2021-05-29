@@ -195,6 +195,7 @@ namespace Scripts
                 }
                 else StartCoroutine("PlayerDeath");
             }
+                  //portal for wining the game
                 else if (other.CompareTag("Portal"))
             {
                 playerWin();
@@ -202,6 +203,7 @@ namespace Scripts
 
         }
         
+        // WinMenu scene when we win the game
         private void playerWin() 
             {
                 SceneManager.LoadScene("WinMenu");

@@ -114,17 +114,6 @@ public class EnemyControl : MonoBehaviour
         
         Debug.Log(direction);
         time ++;
-/*
-        if (transform.position.x > rightWay.position.x)
-            movingRight = false;
-        if (transform.position.x > leftWay.position.x)
-            movingRight = true;
-
-        if (movingRight)
-            moveRight();
-        else
-            moveLeft();*/
-        // amount = Enemy.Count;
     }
     
     public bool checkForEdge()
@@ -142,21 +131,4 @@ public class EnemyControl : MonoBehaviour
     }
     
     
-/*
-    public void moveRight()
-    {
-        movingRight = true;
-        localScale.x = 1f;
-        transform.localScale = localScale;
-        rb.velocity = new Vector2(localScale.x * moveSpeed, rb.velocity.y);
-    }
-    
-    public void moveLeft()
-    {
-        movingRight = false;
-        localScale.x = -1f;
-        transform.localScale = localScale;
-        rb.velocity = new Vector2(localScale.x * moveSpeed, rb.velocity.y);
-    }*/
-
 }
