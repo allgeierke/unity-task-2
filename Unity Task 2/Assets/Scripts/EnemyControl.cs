@@ -9,7 +9,7 @@ public class EnemyControl : MonoBehaviour
     public int amount;
 
     public bool enemyActing;
-
+    
     public SpriteRenderer enemySprite;
     // collection of all used sprites for player animation
     [SerializeField] public Sprite[] animations;
@@ -26,12 +26,16 @@ public class EnemyControl : MonoBehaviour
     // mask with all tiles the enemy can stand on
     public LayerMask canStandOn;
 
-    private Vector3 characterScale;
-    private float xsize;
-
     public BoxCollider2D collider;
 
     public Animator anim;
+    
+   /* public float moveSpeed = 3f;
+    Transform leftWay, rightWay;
+    Vector3 localScale;
+    bool movingRight = true;
+    Rigidbody2D rb;*/
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -42,8 +46,12 @@ public class EnemyControl : MonoBehaviour
         body.velocity = new Vector2(direction * speed * Time.deltaTime, body.velocity.y);
 
 
-        characterScale = transform.localScale;
-        xsize = characterScale.x;
+        /* localScale = transform.localScale;
+         rb = GetComponent<Rigidbody2D>();
+         leftWay = GameObject.Find("LeftWay").GetComponent<Transform>();
+         rightWay = GameObject.Find("RightWay").GetComponent<Transform>();
+     
+ */
     }
 
     private void FixedUpdate()
@@ -57,7 +65,7 @@ public class EnemyControl : MonoBehaviour
 
             }
         }
-
+        
     }
 
     private void OnDisable()
@@ -85,29 +93,39 @@ public class EnemyControl : MonoBehaviour
     {
         // save character's scale in variable
         Vector3 characterScale = transform.localScale;
-
+    
         // calculates movement with the given x input, the chosen player speed & the body's current velocity
         //if (time % 5 == 0)
-
-
+        
+        
         // turn enemy sprite left if facing left
         if (direction > 0)
         {
-            characterScale.x = xsize * -1;
+            characterScale.x = -5;
         }
         // turn right if facing right
         else if (direction < 0)
         {
-            characterScale.x = xsize;
+            characterScale.x = 5;
         }
-
+        
         // update character scale
         transform.localScale = characterScale;
-
+        
         Debug.Log(direction);
         time ++;
+/*
+        if (transform.position.x > rightWay.position.x)
+            movingRight = false;
+        if (transform.position.x > leftWay.position.x)
+            movingRight = true;
+        if (movingRight)
+            moveRight();
+        else
+            moveLeft();*/
+        // amount = Enemy.Count;
     }
-
+    
     public bool checkForEdge()
     {
         // check if any ground tile collides with the players' feet
@@ -121,6 +139,23 @@ public class EnemyControl : MonoBehaviour
 
         return false;
     }
-
+    
+    
+/*
+    public void moveRight()
+    {
+        movingRight = true;
+        localScale.x = 1f;
+        transform.localScale = localScale;
+        rb.velocity = new Vector2(localScale.x * moveSpeed, rb.velocity.y);
+    }
+    
+    public void moveLeft()
+    {
+        movingRight = false;
+        localScale.x = -1f;
+        transform.localScale = localScale;
+        rb.velocity = new Vector2(localScale.x * moveSpeed, rb.velocity.y);
+    }*/
 
 }
