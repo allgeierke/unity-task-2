@@ -14638,6 +14638,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6e92a7c87904139b91d34370331030d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerActing: 0
+  characterScale: {x: 0, y: 0, z: 0}
   playerSprite: {fileID: 321588216}
   animations:
   - {fileID: 21300000, guid: 2109e8f1bd0074351809bf182a9be8c7, type: 3}
@@ -14654,13 +14656,14 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9acc6d9857bd54a4aa5d0b2d7967fb9d, type: 3}
   - {fileID: 21300000, guid: 88936927cde504f29a30a3104502824a, type: 3}
   - {fileID: 21300000, guid: 8c2d576730d854e2c88dc5fb039176b2, type: 3}
-  - {fileID: 21300000, guid: 0e29aedd0b9e343acba7cdd247eb8207, type: 3}
-  - {fileID: 21300000, guid: 47ab6493d16df4bf7a5f36e9e19523ab, type: 3}
-  - {fileID: 21300000, guid: fe8c3f8f5e0214a78a5d98c45c8faa47, type: 3}
-  - {fileID: 21300000, guid: ad83644368491474282314cfcffc471c, type: 3}
-  - {fileID: 21300000, guid: 7346cc2d80f75454fa091610ef441ea1, type: 3}
-  - {fileID: 21300000, guid: 2000cc4268e4740f7a38a8299b354d71, type: 3}
-  - {fileID: 21300000, guid: 01c74af445a534c5b8bf530fc3d0de1b, type: 3}
+  - {fileID: 21300000, guid: 41ea03351725e4179bd9c76ebf4488cd, type: 3}
+  - {fileID: 21300000, guid: 6a71dc55259554788a1ad1dc00311665, type: 3}
+  - {fileID: 21300000, guid: 844343837d99f4d15a6c8c2474e89b5b, type: 3}
+  - {fileID: 21300000, guid: 9d80066c44a244e11b4bcee1af3060bd, type: 3}
+  - {fileID: 21300000, guid: a8c868134c2fd4c9cb9570398ae1dd1b, type: 3}
+  - {fileID: 21300000, guid: c63f5401fba1e49b7be21669f365e8e4, type: 3}
+  - {fileID: 21300000, guid: 8db00defd6ecd400f87bab3ee5ca1294, type: 3}
+  - {fileID: 0}
   body: {fileID: 321588218}
   playerFeet: {fileID: 904083145}
   speed: 4
@@ -16118,7 +16121,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7
+  orthographic size: 4.711146
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -16142,7 +16145,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.4, y: 0.2, z: -227.63098}
+  m_LocalPosition: {x: 21.329998, y: -3.5800002, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 196229083}

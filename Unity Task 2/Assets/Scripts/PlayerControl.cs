@@ -9,6 +9,10 @@ namespace Scripts
 {
     public class PlayerControl : MonoBehaviour
     {
+        // determines if player input is accepted
+        public bool playerActing;
+
+        public Vector3 characterScale;
         //handles depiction of the player character's sprite
         public SpriteRenderer playerSprite;
         // collection of all used sprites for player animation
@@ -35,6 +39,7 @@ namespace Scripts
         // initialization of player object
         private void Start()
         {
+            playerActing = true;
             time = 0;
             jumpForce = 5f;
             speed = 200;
@@ -46,30 +51,37 @@ namespace Scripts
         {
             // (for our Input loads, Unity delivers pre-existing key inputs, which fit the player action)
 
-            if (!IsAirborne()) {
-                
             // calculates movement with the given x input, the chosen player speed & the body's current velocity
             body.velocity = new Vector2(moveInput * speed * Time.deltaTime, body.velocity.y);
             
+            if (!IsAirborne()) {
+                
+            
             
             }
+
+           // if (playerActing == false) body.velocity = new Vector2(0, body.velocity.y);
         }
         
         // player input & visuals
         private void Update()
         {
+            if (playerActing) {
             // save character's scale in variable
-            Vector3 characterScale = transform.localScale;
+            characterScale = transform.localScale;
+            
+            //determines player movement on x axis based on adequate key input (e.g. A, D)
+            moveInput = Input.GetAxisRaw("Horizontal");
             
             // if the player character stands on solid ground
             if (!IsAirborne())
             {
-                //determines player movement on x axis based on adequate key input (e.g. A, D)
-                moveInput = Input.GetAxisRaw("Horizontal");
+                
                 
                 // if a jump button is pressed
                 if (Input.GetButtonDown("Jump"))
                 {
+                    moveInput = Input.GetAxisRaw("Horizontal") / 10;
                     // calculate player jump
                     StartCoroutine(Jump());
                 } else {
@@ -103,6 +115,8 @@ namespace Scripts
 
             // update update method call timer
             time += 10 * Time.deltaTime;
+            
+            }
 
             //Debug.Log(time);
         }
@@ -158,23 +172,59 @@ namespace Scripts
 
             return false;
         }
-        
-        
-        private void OnTriggerEnter2D(Collider2D other)
+
+        public bool jumpOnFoe()
         {
-            if (other.CompareTag("Enemy"))
+            Collider2D collisionWithGround = Physics2D.OverlapCircle(playerFeet.position, 0.5f, 0);
+// if no collision of the feet with the ground was detected
+            if (collisionWithGround != null)
             {
-                playerDeath();
+                return true;
             }
 
-           
+            return false;
         }
         
-        private void playerDeath()
+        
+        public void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.CompareTag("Enemy") && playerActing == true)
+            {
+                other.enabled = false;
+
+                StartCoroutine("PlayerDeath");
+            }
+
+
+
+        }
+        
+        private IEnumerator PlayerDeath()
         {
             // This scene HAS TO BE IN THE BUILD SETTINGS!!!
-
+            playerActing = false;
+            body.velocity /= 2;
+            body.constraints = RigidbodyConstraints2D.None;
+            //body.rotation = -15;
+            //body.freezeRotation = false;
+            playerSprite.sprite = animations[14];
+            yield return new WaitForSecondsRealtime(0.25f);
+            playerSprite.sprite = animations[15];
+            yield return new WaitForSecondsRealtime(0.25f);
+            playerSprite.sprite = animations[16];
+            yield return new WaitForSecondsRealtime(0.15f);
+            playerSprite.sprite = animations[17];
+            yield return new WaitForSecondsRealtime(0.15f);
+            playerSprite.sprite = animations[18];
+            yield return new WaitForSecondsRealtime(0.15f);
+            playerSprite.sprite = animations[19];
+            yield return new WaitForSecondsRealtime(0.15f);
+            playerSprite.sprite = animations[20];
+            yield return new WaitForSecondsRealtime(0.15f);
+            playerSprite.sprite = animations[21];
+            yield return new WaitForSecondsRealtime(2f);
             SceneManager.LoadScene("EndMenu");
+            yield return null;
         }
     }
 }
