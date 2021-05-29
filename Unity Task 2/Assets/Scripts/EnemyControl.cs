@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,9 +7,21 @@ using UnityEngine.SceneManagement;
 public class EnemyControl : MonoBehaviour
 {
     public int amount;
-
+    
+    //handles physics of the enemy character's body
+    public Rigidbody2D body;
+    // determines area of enemy feet for ground collision detection
+    public Transform enemyFeet;
+    // speed of the player character
+    [SerializeField] public float speed;
+    // left/right movement determined by algorithm in update
+    public float direction;
+    // variable for counting updates
+    public float time;
+    // mask with all tiles the enemy can stand on
+    public LayerMask canStandOn;
+    
    /* public float moveSpeed = 3f;
-
     Transform leftWay, rightWay;
     Vector3 localScale;
     bool movingRight = true;
@@ -17,6 +30,12 @@ public class EnemyControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        speed = 50;
+        direction = 1;
+        time = 0;
+        body.velocity = new Vector2(direction * speed * Time.deltaTime, body.velocity.y);
+
+
         /* localScale = transform.localScale;
          rb = GetComponent<Rigidbody2D>();
          leftWay = GameObject.Find("LeftWay").GetComponent<Transform>();
@@ -25,9 +44,45 @@ public class EnemyControl : MonoBehaviour
  */
     }
 
+    private void FixedUpdate()
+    {
+        {
+            if (checkForEdge())
+            {
+                direction *= -1;
+                body.velocity = new Vector2(direction * speed * Time.deltaTime, body.velocity.y);
+
+            }
+        }
+        
+    }
+
     // Update is called once per frame
     void Update()
     {
+        // save character's scale in variable
+        Vector3 characterScale = transform.localScale;
+    
+        // calculates movement with the given x input, the chosen player speed & the body's current velocity
+        //if (time % 5 == 0)
+        
+        
+        // turn enemy sprite left if facing left
+        if (direction > 0)
+        {
+            characterScale.x = -5;
+        }
+        // turn right if facing right
+        else if (direction < 0)
+        {
+            characterScale.x = 5;
+        }
+        
+        // update character scale
+        transform.localScale = characterScale;
+        
+        Debug.Log(direction);
+        time ++;
 /*
         if (transform.position.x > rightWay.position.x)
             movingRight = false;
@@ -41,14 +96,21 @@ public class EnemyControl : MonoBehaviour
         // amount = Enemy.Count;
     }
     
-    private void OnTriggerEnter2D(Collider2D other)
+    public bool checkForEdge()
     {
-        if (other.CompareTag("Enemy"))
+        // check if any ground tile collides with the players' feet
+        Collider2D collisionWithGround = Physics2D.OverlapCircle(enemyFeet.position, 0.5f, canStandOn);
+
+        // if no collision of the feet with the ground was detected
+        if (collisionWithGround == null)
         {
-            // This scene HAS TO BE IN THE BUILD SETTINGS!!!
-            SceneManager.LoadScene("EndMenu");
+            return true;
         }
+
+        return false;
     }
+    
+    
 /*
     public void moveRight()
     {
