@@ -18574,8 +18574,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 904083145}
-  - component: {fileID: 904083147}
   - component: {fileID: 904083146}
+  - component: {fileID: 904083147}
   - component: {fileID: 904083148}
   m_Layer: 0
   m_Name: Player Feet
@@ -18610,7 +18610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 923b635ba50548609b17a48f99f53f1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationSprite: {fileID: 904083147}
+  renderer: {fileID: 904083147}
   animations:
   - {fileID: 21300000, guid: 844343837d99f4d15a6c8c2474e89b5b, type: 3}
   - {fileID: 21300000, guid: 9d80066c44a244e11b4bcee1af3060bd, type: 3}
