@@ -30,7 +30,7 @@ namespace Scripts
             for (int n = 0; n <=5; n++)
             {
                 renderer.sprite = animations[n];
-                yield return new WaitForSecondsRealtime(0.15f);
+                yield return new WaitForSecondsRealtime(0.1f);
             }
            
             yield return null;
