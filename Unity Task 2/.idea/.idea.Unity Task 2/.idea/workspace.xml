@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="dea6398d-19ea-4e6c-a88e-041f8993929e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity Task 2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity Task 2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyControl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +137,7 @@
       <workItem from="1622224903980" duration="44000" />
       <workItem from="1622225186746" duration="1443000" />
       <workItem from="1622287827795" duration="4313000" />
-      <workItem from="1622321471282" duration="4680000" />
+      <workItem from="1622321471282" duration="7124000" />
     </task>
     <servers />
   </component>
