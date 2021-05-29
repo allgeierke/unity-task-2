@@ -3,7 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="dea6398d-19ea-4e6c-a88e-041f8993929e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity Task 2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity Task 2/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerControl.cs" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+>>>>>>> 07a9289b0ed20c4930c46e016ddaeffc47a57c80
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +27,8 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Collect.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Collect.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -41,12 +46,18 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PauseMenu.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EndScreen.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameControl.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Collect1.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Collect.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EnemyControl.cs" />
+<<<<<<< HEAD
       <option value="$PROJECT_DIR$/Assets/Scripts/Collect.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerControl.cs" />
+=======
+      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerControl.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/WinMenu.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" />
+>>>>>>> 07a9289b0ed20c4930c46e016ddaeffc47a57c80
     </changedPaths>
   </component>
   <component name="ProjectId" id="1sCncRQ01TK0b0hC0RFnSlUP0nP" />
@@ -132,8 +143,6 @@
       <workItem from="1622224903980" duration="44000" />
       <workItem from="1622225186746" duration="1443000" />
       <workItem from="1622287827795" duration="4313000" />
-      <workItem from="1622293909736" duration="467000" />
-      <workItem from="1622294600576" duration="975000" />
     </task>
     <servers />
   </component>

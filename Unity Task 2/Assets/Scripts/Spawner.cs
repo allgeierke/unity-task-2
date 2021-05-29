@@ -9,6 +9,8 @@ public class Spawner : MonoBehaviour
     public GameObject enemy;
     float randomX;
     Vector2 whereToSpawn;
+    private int amount;
+    
 
     public float spawnRate = 2f;
 
@@ -28,15 +30,21 @@ public class Spawner : MonoBehaviour
     {
         if (triggered)
         {
-
-            if (Time.time > nextSpawn)
+            // anzahl der gespawnten enemies
+            if (amount <= 5)
             {
+                if (Time.time > nextSpawn)
+                {
 
-                //statt mit time.time evtl wenn finalBoss dead + spawnRate
-                nextSpawn = Time.time + spawnRate;
-                randomX = Random.Range(41.0f, 45.0f);
-                whereToSpawn = new Vector2(randomX, transform.position.y);
-                Instantiate(enemy, whereToSpawn, Quaternion.identity);
+
+                    //statt mit time.time evtl wenn finalBoss dead + spawnRate
+                    nextSpawn = Time.time + spawnRate;
+                    randomX = Random.Range(26, 36);
+                    Debug.Log(randomX);
+                    whereToSpawn = new Vector2(randomX + 5, transform.position.y);
+                    Instantiate(enemy, whereToSpawn, Quaternion.identity);
+                    amount++;
+                }
             }
         }
     }
