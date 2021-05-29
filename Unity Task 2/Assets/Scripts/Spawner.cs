@@ -30,14 +30,13 @@ public class Spawner : MonoBehaviour
     {
         if (triggered)
         {
-            // anzahl der gespawnten enemies
+            // amount and timerate of spawning enemies
             if (amount <= 5)
             {
                 if (Time.time > nextSpawn)
                 {
-
-
-                    //statt mit time.time evtl wenn finalBoss dead + spawnRate
+                    
+                    //where enemies spawn
                     nextSpawn = Time.time + spawnRate;
                     randomX = Random.Range(26, 36);
                     Debug.Log(randomX);

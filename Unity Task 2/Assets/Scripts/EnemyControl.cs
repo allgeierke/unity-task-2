@@ -6,35 +6,41 @@ using UnityEngine.SceneManagement;
 
 public class EnemyControl : MonoBehaviour
 {
-    // decides whether the enemy is alive/active or not
+    public int amount;
+
     public bool enemyActing;
-    // handles rendering of the enemy sprite
-    public SpriteRenderer renderer;
-    // breathing animation
-    public Animator breathing;
+
+    public SpriteRenderer enemySprite;
+    // collection of all used sprites for player animation
+    [SerializeField] public Sprite[] animations;
     //handles physics of the enemy character's body
     public Rigidbody2D body;
-    // enemy's collider
-    public BoxCollider2D collider;
     // determines area of enemy feet for ground collision detection
-    public Transform edgeDetector;
+    public Transform enemyFeet;
     // speed of the player character
     [SerializeField] public float speed;
     // left/right movement determined by algorithm in update
-    public float movement;
+    public float direction;
+    // variable for counting updates
+    public float time;
     // mask with all tiles the enemy can stand on
     public LayerMask canStandOn;
 
     private Vector3 characterScale;
     private float xsize;
 
+    public BoxCollider2D collider;
+
+    public Animator anim;
     // Start is called before the first frame update
     void Start()
     {
         enemyActing = true;
         speed = 50;
-        movement = 1;
-        body.velocity = new Vector2(movement * speed * Time.deltaTime, body.velocity.y);
+        direction = 1;
+        time = 0;
+        body.velocity = new Vector2(direction * speed * Time.deltaTime, body.velocity.y);
+
 
         characterScale = transform.localScale;
         xsize = characterScale.x;
@@ -46,31 +52,30 @@ public class EnemyControl : MonoBehaviour
         {
             if (checkForEdge())
             {
-                movement *= -1;
-                body.velocity = new Vector2(movement * speed * Time.deltaTime, body.velocity.y);
+                direction *= -1;
+                body.velocity = new Vector2(direction * speed * Time.deltaTime, body.velocity.y);
 
             }
         }
-        
+
+    }
+
+    private void OnDisable()
+    {
+
+
     }
 
     private IEnumerator EnemyDeath()
     {
-        // like literally lol
-        breathing.speed = 0;
-        // enemy can't act anymore
+
+        anim.speed = 0;
         enemyActing = false;
-        // change to space gravity
         body.gravityScale = 0;
-        // unfreeze rotation (no working muscles anymore)
         body.constraints = RigidbodyConstraints2D.None;
-        // float away
         body.velocity = new Vector2(body.velocity.x, body.velocity.y-0.2f);
-        // allows bumping into player and obstacles
         collider.isTrigger = false;
-        // change sprite color (now red for blood/wounds)
-        renderer.color = Color.red;
-        // disable the script
+        enemySprite.color = Color.red;
         this.enabled = false;
         yield return null;
     }
@@ -79,35 +84,43 @@ public class EnemyControl : MonoBehaviour
     void Update()
     {
         // save character's scale in variable
+        Vector3 characterScale = transform.localScale;
 
-        // turn enemy sprite left if going left
-        if (movement > 0)
+        // calculates movement with the given x input, the chosen player speed & the body's current velocity
+        //if (time % 5 == 0)
+
+
+        // turn enemy sprite left if facing left
+        if (direction > 0)
         {
             characterScale.x = xsize * -1;
         }
-        // turn right if going right
-        else if (movement < 0)
+        // turn right if facing right
+        else if (direction < 0)
         {
             characterScale.x = xsize;
         }
-        
+
         // update character scale
         transform.localScale = characterScale;
 
+        Debug.Log(direction);
+        time ++;
     }
-    
+
     public bool checkForEdge()
     {
-        // check if any ground tile collides with the edge detector transform
-        Collider2D detectGround = Physics2D.OverlapCircle(edgeDetector.position, 0.5f, canStandOn);
+        // check if any ground tile collides with the players' feet
+        Collider2D collisionWithGround = Physics2D.OverlapCircle(enemyFeet.position, 0.5f, canStandOn);
 
-        // if no collision of the detector with the ground was detected
-        if (detectGround == null)
+        // if no collision of the feet with the ground was detected
+        if (collisionWithGround == null)
         {
             return true;
         }
 
         return false;
     }
+
 
 }

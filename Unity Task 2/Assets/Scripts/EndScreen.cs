@@ -8,43 +8,20 @@ public class EndScreen : MonoBehaviour
    
     public static bool Gameisfinished = false;
 
+    //"Button" in Inspector for the EndMenu
     public GameObject GameEnd;
-    
-   /* public GameObject avatar1, avatar2;
-    private int Alien;
-    //private int playerHealth;
-    void Start()
-    {
-        avatar1.gameObject.SetActive(false);
-        avatar2.gameObject.SetActive(false);
-    }
 
-    // Update is called once per frame
+
     void Update()
-    {
-       //playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>().curHealth;
-      // Alien = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyControl>().amount;
-
-        //If health is at 0 the Lose screen pops up and the game will stop
-        
-        {
-            avatar1.gameObject.SetActive(true);
-            Time.timeScale = 0;
-        }
-
-        // And if there are no more asteroids the Win screen shows up and the game stop
-        if (Alien == 0)
-        {
-            avatar2.gameObject.SetActive(true);
-            Time.timeScale = 0;
-        }
-    }*/
-   void Update()
    {
        
    }
 
-   public void End()
+   
+    
+    //When gameover = Screen is freezed and EndMenu is set true
+    
+    public void End()
    {
    
        GameEnd.SetActive(true);
@@ -52,15 +29,19 @@ public class EndScreen : MonoBehaviour
       
    }
 
+    //When button PlayAgain is pressed, the game/scene will reload from the beginning
+    // Game is not freezed
     public void PlayAgain()
     {
-      //  GameEnd.SetActive(false);
+    
         Time.timeScale = 1f;
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Level1");
     }
+    
+    //When button "Main menu" is pressed, the scene "MainMenu" is on the screen
     public void Menu()
     {
-        Time.timeScale = 1f;
+       // Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }
 }

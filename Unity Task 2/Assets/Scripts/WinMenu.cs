@@ -21,7 +21,7 @@ public class WinMenu : MonoBehaviour
     {
         //  GameEnd.SetActive(false);
         Time.timeScale = 1f;
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Level1");
     }
     public void Menu()
     {
