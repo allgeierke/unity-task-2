@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 namespace Scripts
 {
@@ -25,9 +27,8 @@ namespace Scripts
         public LayerMask canStandOn;
         // determines whether player is currently in the air
         public bool isAirborne;
-        
-        // current variable for counting updates. to be replaced
-        private float time;
+        // variable for counting updates
+        public float time;
         
         // (Unity functions sorted by order of execution)
         
@@ -156,6 +157,24 @@ namespace Scripts
             }
 
             return false;
+        }
+        
+        
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.CompareTag("Enemy"))
+            {
+                playerDeath();
+            }
+
+           
+        }
+        
+        private void playerDeath()
+        {
+            // This scene HAS TO BE IN THE BUILD SETTINGS!!!
+
+            SceneManager.LoadScene("EndMenu");
         }
     }
 }
