@@ -25,6 +25,9 @@ public class EnemyControl : MonoBehaviour
     // mask with all tiles the enemy can stand on
     public LayerMask canStandOn;
 
+    private Vector3 characterScale;
+    private float xsize;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +36,8 @@ public class EnemyControl : MonoBehaviour
         movement = 1;
         body.velocity = new Vector2(movement * speed * Time.deltaTime, body.velocity.y);
 
+        characterScale = transform.localScale;
+        xsize = characterScale.x;
     }
 
     private void FixedUpdate()
@@ -74,17 +79,16 @@ public class EnemyControl : MonoBehaviour
     void Update()
     {
         // save character's scale in variable
-        Vector3 characterScale = transform.localScale;
-        
+
         // turn enemy sprite left if going left
         if (movement > 0)
         {
-            characterScale.x = -5;
+            characterScale.x = xsize * -1;
         }
         // turn right if going right
         else if (movement < 0)
         {
-            characterScale.x = 5;
+            characterScale.x = xsize;
         }
         
         // update character scale
