@@ -15204,7 +15204,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 321588214}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.84, y: -15.11, z: 3.3362405}
+  m_LocalPosition: {x: 13.66, y: -15.18, z: 3.3362405}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children:
   - {fileID: 904083145}
@@ -15274,6 +15274,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6e92a7c87904139b91d34370331030d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerActing: 0
+  characterScale: {x: 0, y: 0, z: 0}
   playerSprite: {fileID: 321588216}
   animations:
   - {fileID: 21300000, guid: 2109e8f1bd0074351809bf182a9be8c7, type: 3}
@@ -15307,6 +15309,10 @@ MonoBehaviour:
     m_Bits: 8
   isAirborne: 0
   time: 0
+  jumpableFoes:
+    serializedVersion: 2
+    m_Bits: 0
+  jumpAnimation: {fileID: 0}
 --- !u!50 &321588218
 Rigidbody2D:
   serializedVersion: 4
@@ -18909,6 +18915,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amount: 0
+  enemyActing: 0
+  enemySprite: {fileID: 0}
+  animations: []
   body: {fileID: 935510813}
   enemyFeet: {fileID: 1331279227}
   speed: 0
@@ -18917,6 +18926,8 @@ MonoBehaviour:
   canStandOn:
     serializedVersion: 2
     m_Bits: 8
+  collider: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!1 &938013890
 GameObject:
   m_ObjectHideFlags: 0
@@ -22027,7 +22038,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1445503304}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 19.91, y: -16.49, z: -256.43484}
+  m_LocalPosition: {x: 19.21, y: -16.49, z: -256.43484}
   m_LocalScale: {x: 2.2158144, y: 3.0409374, z: 1}
   m_Children: []
   m_Father: {fileID: 196229083}
@@ -22982,7 +22993,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560031473}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 29.939999, y: -19.61, z: -10}
+  m_LocalPosition: {x: 28.759998, y: -19.68, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1540443123}
