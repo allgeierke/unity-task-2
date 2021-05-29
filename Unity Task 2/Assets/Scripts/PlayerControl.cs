@@ -180,12 +180,13 @@ namespace Scripts
 
         public void OnTriggerEnter2D(Collider2D other)
         {
-            Collider2D standOnEnemy = Physics2D.OverlapCircle(playerFeet.position, 0.1f, jumpableFoes);
+            Collider2D standOnEnemy = Physics2D.OverlapCircle(playerFeet.position, 0.5f, jumpableFoes);
             if (other.CompareTag("Enemy") && playerActing == true)
             {
                 if (standOnEnemy != null)
                 {
                     StartCoroutine("Jump");
+                    playerSprite.sprite = animations[14];
                     other.gameObject.GetComponent<EnemyControl>().StartCoroutine("EnemyDeath");
                     //other.enabled = false;
 
