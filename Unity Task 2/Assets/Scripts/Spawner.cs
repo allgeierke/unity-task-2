@@ -34,7 +34,7 @@ public class Spawner : MonoBehaviour
 
                 //statt mit time.time evtl wenn finalBoss dead + spawnRate
                 nextSpawn = Time.time + spawnRate;
-                randomX = Random.Range(18.0f, 30.0f);
+                randomX = Random.Range(26f, 36f);
                 whereToSpawn = new Vector2(randomX, transform.position.y);
                 Instantiate(enemy, whereToSpawn, Quaternion.identity);
             }

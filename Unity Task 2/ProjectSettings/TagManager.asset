@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - Spawner
   - Coin
+  - Portal
   layers:
   - Default
   - TransparentFX
