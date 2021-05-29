@@ -13813,7 +13813,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 101469881}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.5424234, y: 1.7275798, z: 0}
+  m_LocalPosition: {x: -0.232, y: -0.147, z: 0}
   m_LocalScale: {x: 0.000048422036, y: 0.4354784, z: 4.7055}
   m_Children: []
   m_Father: {fileID: 1693169327}
@@ -15617,17 +15617,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e464d4dcc2804413ea782807e80c41c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  amount: 0
   enemyActing: 0
-  renderer: {fileID: 385141980}
-  breathing: {fileID: 385141979}
+  enemySprite: {fileID: 385141980}
+  animations: []
   body: {fileID: 385141977}
-  collider: {fileID: 385141978}
-  edgeDetector: {fileID: 1398690163}
+  enemyFeet: {fileID: 1398690163}
   speed: 0
-  movement: 0
+  direction: 0
+  time: 0
   canStandOn:
     serializedVersion: 2
     m_Bits: 8
+  collider: {fileID: 385141978}
+  anim: {fileID: 385141979}
 --- !u!1 &396882652
 GameObject:
   m_ObjectHideFlags: 0
@@ -19075,17 +19078,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e464d4dcc2804413ea782807e80c41c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  amount: 0
   enemyActing: 0
-  renderer: {fileID: 935510811}
-  breathing: {fileID: 935510810}
+  enemySprite: {fileID: 935510811}
+  animations: []
   body: {fileID: 935510813}
-  collider: {fileID: 935510812}
-  edgeDetector: {fileID: 1331279227}
+  enemyFeet: {fileID: 1331279227}
   speed: 0
-  movement: 0
+  direction: 0
+  time: 0
   canStandOn:
     serializedVersion: 2
     m_Bits: 8
+  collider: {fileID: 935510812}
+  anim: {fileID: 935510810}
 --- !u!1 &938013890
 GameObject:
   m_ObjectHideFlags: 0
@@ -20261,17 +20267,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e464d4dcc2804413ea782807e80c41c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  amount: 0
   enemyActing: 0
-  renderer: {fileID: 1080013528}
-  breathing: {fileID: 1080013527}
+  enemySprite: {fileID: 1080013528}
+  animations: []
   body: {fileID: 1080013525}
-  collider: {fileID: 1080013526}
-  edgeDetector: {fileID: 557906627}
+  enemyFeet: {fileID: 557906627}
   speed: 0
-  movement: 0
+  direction: 0
+  time: 0
   canStandOn:
     serializedVersion: 2
     m_Bits: 8
+  collider: {fileID: 1080013526}
+  anim: {fileID: 1080013527}
 --- !u!1 &1089669263
 GameObject:
   m_ObjectHideFlags: 0
@@ -21368,17 +21377,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e464d4dcc2804413ea782807e80c41c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  amount: 0
   enemyActing: 0
-  renderer: {fileID: 1200990052}
-  breathing: {fileID: 1200990051}
+  enemySprite: {fileID: 1200990052}
+  animations: []
   body: {fileID: 1200990049}
-  collider: {fileID: 1200990050}
-  edgeDetector: {fileID: 10194385}
+  enemyFeet: {fileID: 10194385}
   speed: 0
-  movement: 0
+  direction: 0
+  time: 0
   canStandOn:
     serializedVersion: 2
     m_Bits: 8
+  collider: {fileID: 1200990050}
+  anim: {fileID: 1200990051}
 --- !u!1 &1214231692
 GameObject:
   m_ObjectHideFlags: 0
@@ -23742,17 +23754,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e464d4dcc2804413ea782807e80c41c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  amount: 0
   enemyActing: 0
-  renderer: {fileID: 1568401573}
-  breathing: {fileID: 0}
+  enemySprite: {fileID: 1568401573}
+  animations: []
   body: {fileID: 1568401575}
-  collider: {fileID: 1568401574}
-  edgeDetector: {fileID: 556641031}
+  enemyFeet: {fileID: 556641031}
   speed: 0
-  movement: 0
+  direction: 0
+  time: 0
   canStandOn:
     serializedVersion: 2
     m_Bits: 8
+  collider: {fileID: 1568401574}
+  anim: {fileID: 1568401572}
 --- !u!1 &1573284415
 GameObject:
   m_ObjectHideFlags: 0
@@ -24599,17 +24614,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e464d4dcc2804413ea782807e80c41c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  amount: 0
   enemyActing: 0
-  renderer: {fileID: 1693169329}
-  breathing: {fileID: 0}
+  enemySprite: {fileID: 1693169329}
+  animations: []
   body: {fileID: 1693169330}
-  collider: {fileID: 1693169332}
-  edgeDetector: {fileID: 101469882}
+  enemyFeet: {fileID: 101469882}
   speed: 0
-  movement: 0
+  direction: 0
+  time: 0
   canStandOn:
     serializedVersion: 2
     m_Bits: 8
+  collider: {fileID: 1693169332}
+  anim: {fileID: 0}
 --- !u!61 &1693169332
 BoxCollider2D:
   m_ObjectHideFlags: 0
