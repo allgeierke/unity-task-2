@@ -3,17 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="dea6398d-19ea-4e6c-a88e-041f8993929e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity Task 2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity Task 2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EndScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EndScreen.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyControl.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PauseMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PauseMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerControl.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WinMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WinMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BootsControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BootsControl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +42,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/ScoreCounter.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameControl.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Collect1.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Collect.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EnemyControl.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerControl.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" />
@@ -59,6 +50,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/PauseMenu.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/WinMenu.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/BootsControl.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Collect.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1sCncRQ01TK0b0hC0RFnSlUP0nP" />

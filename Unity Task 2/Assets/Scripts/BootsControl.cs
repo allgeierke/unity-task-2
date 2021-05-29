@@ -53,7 +53,7 @@ namespace Scripts
                 // jump again
                 StartCoroutine("Jump");
                 // adjust player animation
-                attachedPlayer.GetComponent<PlayerControl>().renderer.sprite = attachedPlayer.GetComponent<PlayerControl>().animations[14];
+                attachedPlayer.GetComponent<PlayerControl>().GetComponent<Renderer>().sprite = attachedPlayer.GetComponent<PlayerControl>().animations[14];
                 // show blaster animation
                 StartCoroutine("AttackAnimation");
                 // kill enemy
