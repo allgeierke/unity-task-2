@@ -194,7 +194,7 @@ namespace Scripts
                 }
                 else StartCoroutine("PlayerDeath");
             }
-else if (other.CompareTag("Portal"))
+                else if (other.CompareTag("Portal"))
             {
                 playerWin();
             }
