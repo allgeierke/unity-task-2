@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="dea6398d-19ea-4e6c-a88e-041f8993929e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity Task 2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity Task 2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyControl.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerControl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Collect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Collect.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,9 +44,9 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameControl.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Collect1.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Collect.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EnemyControl.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerControl.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Collect.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1sCncRQ01TK0b0hC0RFnSlUP0nP" />
@@ -134,6 +132,8 @@
       <workItem from="1622224903980" duration="44000" />
       <workItem from="1622225186746" duration="1443000" />
       <workItem from="1622287827795" duration="4313000" />
+      <workItem from="1622293909736" duration="467000" />
+      <workItem from="1622294600576" duration="651000" />
     </task>
     <servers />
   </component>
