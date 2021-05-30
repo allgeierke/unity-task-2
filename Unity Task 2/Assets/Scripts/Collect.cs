@@ -1,3 +1,4 @@
+using Scripts;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,7 +10,7 @@ public class Collect : MonoBehaviour
     public Text scoreText;
     //Textfield for highscore
     public Text highscoreText;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,6 @@ public class Collect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -49,6 +49,25 @@ public class Collect : MonoBehaviour
                 highscoreText.text = "Highscore: " + PlayerPrefs.GetInt("Highscore");
             }
 
+        }
+
+        if (other.tag == "Enemy")
+        {
+            Debug.Log("ENEMY COLLIDED");
+            Debug.Log(other.gameObject.GetComponent<EnemyControl>().enabled);
+            
+            if (other.gameObject.GetComponent<EnemyControl>().enabled == false)
+            {
+                Debug.Log("ENEMY KILLED");
+                coinCounter++;
+                scoreText.text = "Score: " + coinCounter;
+            
+                if (coinCounter > PlayerPrefs.GetInt("Highscore"))
+                {
+                    PlayerPrefs.SetInt("Highscore", coinCounter);
+                    highscoreText.text = "Highscore: " + PlayerPrefs.GetInt("Highscore");
+                }
+            }
         }
     }
 }
