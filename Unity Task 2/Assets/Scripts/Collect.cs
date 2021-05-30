@@ -57,9 +57,9 @@ public class Collect : MonoBehaviour
         if (other.tag == "Enemy")
         {
             Debug.Log("ENEMY COLLIDED");
-            Debug.Log(other.gameObject.GetComponent<EnemyControl>().enabled);
+            Debug.Log(other.gameObject.GetComponent<EnemyControl>().death);
             
-            if (other.gameObject.GetComponent<EnemyControl>().enabled == false)
+            if (other.gameObject.GetComponent<EnemyControl>().death == false)
             {
                 Debug.Log("ENEMY KILLED");
                 coinCounter++;

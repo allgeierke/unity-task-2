@@ -23750,7 +23750,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 321588214}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.8, y: 10.3, z: 3.3362405}
+  m_LocalPosition: {x: -8.41, y: 10.77, z: 3.3362405}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children:
   - {fileID: 904083145}
@@ -24452,6 +24452,7 @@ MonoBehaviour:
   collider: {fileID: 385141978}
   anim: {fileID: 385141979}
   deathSound: {fileID: 1984407889}
+  death: 0
 --- !u!1 &394130159
 GameObject:
   m_ObjectHideFlags: 0
@@ -63531,6 +63532,7 @@ MonoBehaviour:
   collider: {fileID: 935510812}
   anim: {fileID: 935510810}
   deathSound: {fileID: 1984407889}
+  death: 0
 --- !u!1 &938013890
 GameObject:
   m_ObjectHideFlags: 0
@@ -64821,6 +64823,7 @@ MonoBehaviour:
   collider: {fileID: 1080013526}
   anim: {fileID: 1080013527}
   deathSound: {fileID: 1984407889}
+  death: 0
 --- !u!1 &1089669263
 GameObject:
   m_ObjectHideFlags: 0
@@ -66014,6 +66017,7 @@ MonoBehaviour:
   collider: {fileID: 1200990050}
   anim: {fileID: 1200990051}
   deathSound: {fileID: 1984407889}
+  death: 0
 --- !u!1 &1213543324
 GameObject:
   m_ObjectHideFlags: 0
@@ -68237,7 +68241,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560031473}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.9300003, y: 6.640001, z: -10}
+  m_LocalPosition: {x: 5.4000006, y: 7.110001, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1540443123}
@@ -68425,6 +68429,7 @@ MonoBehaviour:
   collider: {fileID: 1568401574}
   anim: {fileID: 1568401572}
   deathSound: {fileID: 1984407889}
+  death: 0
 --- !u!1 &1573284415
 GameObject:
   m_ObjectHideFlags: 0

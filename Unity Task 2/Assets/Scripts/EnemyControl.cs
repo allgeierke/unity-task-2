@@ -34,6 +34,7 @@ public class EnemyControl : MonoBehaviour
     private float xsize;
     
     public AudioSource deathSound;
+    public bool death;
 
     
    /* public float moveSpeed = 3f;
@@ -95,6 +96,8 @@ public class EnemyControl : MonoBehaviour
         enemySprite.color = Color.red;
         this.enabled = false;
         yield return null;
+        death = true; 
+        yield return new WaitForSecondsRealtime(0.1f);
     }
 
     // Update is called once per frame
