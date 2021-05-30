@@ -43,6 +43,12 @@ namespace Scripts
                     StartCoroutine(JumpAnimation());
 
             }
+
+            if (IsAirborne())
+            {
+                attachedPlayer.GetComponent<PlayerControl>().renderer.sprite = attachedPlayer.GetComponent<PlayerControl>().animations[14];
+
+            }
         }
 
         public void OnTriggerEnter2D(Collider2D other)
@@ -52,8 +58,7 @@ namespace Scripts
             {
                 // jump again
                 StartCoroutine("Jump");
-                // adjust player animation
-                attachedPlayer.GetComponent<PlayerControl>().renderer.sprite = attachedPlayer.GetComponent<PlayerControl>().animations[14];
+                
                 // show blaster animation
                 StartCoroutine("AttackAnimation");
                 // kill enemy
@@ -89,6 +94,7 @@ namespace Scripts
 
         private IEnumerator Jump()
         {
+            // adjust player animation
            
             // get current velocity from player
             float currentVelocity = attachedPlayer.GetComponent<PlayerControl>().body.velocity.x;
