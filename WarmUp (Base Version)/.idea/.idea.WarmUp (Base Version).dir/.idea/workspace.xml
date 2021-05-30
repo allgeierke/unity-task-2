@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8c7c145-3dc6-450d-a03d-9b48afa3e6cf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Unity Task 2/.idea/.idea.Unity Task 2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Unity Task 2/.idea/.idea.Unity Task 2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Unity Task 2/Assets/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/../Unity Task 2/Assets/Scenes/Level1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Unity Task 2/Assets/Scripts/BootsControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Unity Task 2/Assets/Scripts/BootsControl.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Unity Task 2/Assets/Scripts/EnemyControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Unity Task 2/Assets/Scripts/EnemyControl.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Unity Task 2/Assets/Scripts/PlayerControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Unity Task 2/Assets/Scripts/PlayerControl.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.WarmUp (Base Version).dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WarmUp (Base Version).dir/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
