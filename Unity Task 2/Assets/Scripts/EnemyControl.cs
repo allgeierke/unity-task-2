@@ -33,6 +33,9 @@ public class EnemyControl : MonoBehaviour
     private Vector3 characterScale;
     private float xsize;
     
+    public AudioSource deathSound;
+
+    
    /* public float moveSpeed = 3f;
     Transform leftWay, rightWay;
     Vector3 localScale;
@@ -82,7 +85,7 @@ public class EnemyControl : MonoBehaviour
 
     private IEnumerator EnemyDeath()
     {
-
+        deathSound.Play();
         anim.speed = 0;
         enemyActing = false;
         body.gravityScale = 0;

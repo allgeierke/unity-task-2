@@ -38,6 +38,8 @@ namespace Scripts
         // variable for counting updates
         public float time;
 
+        public AudioSource deathSound;
+
         // (Unity functions sorted by order of execution)
 
         // initialization of player object
@@ -137,13 +139,13 @@ namespace Scripts
 
         public void OnTriggerEnter2D(Collider2D other)
         {
-            Collider2D bootsTouchEnemy = Physics2D.OverlapCircle(techBoots.transform.position, 0.3f, jumpableFoes);
+            Collider2D bootsTouchEnemy = Physics2D.OverlapCircle(techBoots.transform.position, 0.4f, jumpableFoes);
             //If boots dont hit enemy but you collide with one, then..
-            if (bootsTouchEnemy == null && (other.CompareTag("Enemy") || other.CompareTag("Water") ) && playerActing == true)
-            {
+            if (other.CompareTag("Enemy") || other.CompareTag("Water")) {
+            
                 //start PlayerDeath coroutine
-                StartCoroutine("PlayerDeath");
-            }
+                if (bootsTouchEnemy == null && playerActing == true) StartCoroutine("PlayerDeath");
+        }
             //if colliding with the portal
             else if (other.CompareTag("Portal"))
             {
@@ -160,6 +162,7 @@ namespace Scripts
 
         private IEnumerator PlayerDeath()
         {
+            deathSound.Play();
             //disables movement
             playerActing = false;
             techBoots.GetComponent<BootsControl>().enabled= false;

@@ -25,7 +25,12 @@ namespace Scripts
 
         // determines whether player is currently in the air
         public bool isAirborne;
+        
+        public AudioSource jumpSound;
 
+        public AudioSource AttackSound;
+
+        
         private void Start()
         {
             // color of the attack animation
@@ -39,6 +44,7 @@ namespace Scripts
             if (!IsAirborne() && Input.GetButtonDown("Jump"))
             {
                     // calculate player jump
+                    jumpSound.Play();
                     StartCoroutine(Jump());
                     StartCoroutine(JumpAnimation());
 
@@ -59,6 +65,7 @@ namespace Scripts
                 // jump again
                 StartCoroutine("Jump");
                 
+                AttackSound.Play();
                 // show blaster animation
                 StartCoroutine("AttackAnimation");
                 // kill enemy
