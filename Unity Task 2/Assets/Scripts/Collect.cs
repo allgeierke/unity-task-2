@@ -11,6 +11,8 @@ public class Collect : MonoBehaviour
     //Textfield for highscore
     public Text highscoreText;
 
+    public AudioSource collectSound;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +33,7 @@ public class Collect : MonoBehaviour
         //If player collides with a objects, using the coin tag then...
         if (other.tag == "Coin")
         {
+            collectSound.Play();
             //increase score by 1
             coinCounter++;
             //destroy the coin
