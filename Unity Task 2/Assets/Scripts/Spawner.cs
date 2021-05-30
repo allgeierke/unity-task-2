@@ -39,9 +39,13 @@ public class Spawner : MonoBehaviour
                     
                     //where enemies spawn
                     nextSpawn = Time.time + spawnRate;
+                    //random x value on the plattform
                     randomX = Random.Range(40, 43);
+                    //location for the prefab to spawn
                     whereToSpawn = new Vector2(randomX, transform.position.y-3.7f);
+                    //spawn it
                     Instantiate(enemy, whereToSpawn, Quaternion.identity);
+                    //increase amount/counter for the maximum amount comparison
                     amount++;
                 }
             }
@@ -53,8 +57,12 @@ public class Spawner : MonoBehaviour
 
    private void OnTriggerEnter2D(Collider2D other)
    {
-       if (other.CompareTag("Player")) ;
-        triggered = true;
-    }
+       //If player collides/enters the certain game object
+       if (other.CompareTag("Player"))
+       {
+           //Set triggered to true
+           triggered = true;
+       }
+   }
    
 }

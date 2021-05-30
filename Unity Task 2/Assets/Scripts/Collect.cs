@@ -5,18 +5,18 @@ using UnityEngine.UI;
 public class Collect : MonoBehaviour
 {
     private int coinCounter;
-    //Textfeld für Score
+    //Textfield for score
     public Text scoreText;
-    //Textfeld für Highscore
+    //Textfield for highscore
     public Text highscoreText;
     
     // Start is called before the first frame update
     void Start()
     {
-        //Score auf 0 setzen
+        //set score to 0
         coinCounter = 0;
         
-        //Highscore laden mit dem Key "Highscore"
+        //Load highscore using the key "highscore"
         highscoreText.text = "Highscore: " + PlayerPrefs.GetInt("Highscore");
     }
 
@@ -28,24 +28,24 @@ public class Collect : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        //Wenn Player mit einen Object mit dem Tag "Coin" collided, dann....
+        //If player collides with a objects, using the coin tag then...
         if (other.tag == "Coin")
         {
-            //erhöhe den Score um 1
+            //increase score by 1
             coinCounter++;
-            //zerstöre das Objekt
+            //destroy the coin
             Destroy(other.gameObject);
-            //Aktualisiere den Text
+            //update the text
             scoreText.text = "Score: " + coinCounter;
-            //Send eine Debug-Message aus
+            //Send a debug message(was for testing purpose
             Debug.Log("Coin counter: " + coinCounter);
 
-            //Sobald der Coincounter höher als der Highscore ist
+            //As soon as the coinCounter is bigger than the higherscore..
             if (coinCounter > PlayerPrefs.GetInt("Highscore"))
             {
-                //aktualisiere ihn aktiv um den coinCounter
+                //update the highscore actively by the coincounter
                 PlayerPrefs.SetInt("Highscore", coinCounter);
-                //aktualisiere den Text
+                //update the text
                 highscoreText.text = "Highscore: " + PlayerPrefs.GetInt("Highscore");
             }
 

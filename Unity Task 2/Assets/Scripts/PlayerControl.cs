@@ -43,6 +43,7 @@ namespace Scripts
         // initialization of player object
         private void Start()
         {
+            //activates player movement
             playerActing = true;
             time = 0;
             speed = 200;
@@ -137,34 +138,42 @@ namespace Scripts
         public void OnTriggerEnter2D(Collider2D other)
         {
             Collider2D bootsTouchEnemy = Physics2D.OverlapCircle(techBoots.transform.position, 0.3f, jumpableFoes);
-
+            //If boots dont hit enemy but you collide with one, then..
             if (bootsTouchEnemy == null && other.CompareTag("Enemy") && playerActing == true)
             {
+                //start PlayerDeath coroutine
                 StartCoroutine("PlayerDeath");
             }
+            //if colliding with the portal
             else if (other.CompareTag("Portal"))
             {
+                //call winmenu
                 playerWin();
             }
         }
 
         private void playerWin()
         {
+            //loads winmenu
             SceneManager.LoadScene("WinMenu");
         }
 
         private IEnumerator PlayerDeath()
         {
+            //disables movement
             playerActing = false;
+            //halfs the velocity
             body.velocity /= 2;
             body.constraints = RigidbodyConstraints2D.None;
 
+            //starts loop and plays animation by using array of sprites and waits some time between each
             for (int n = 14; n <= 21; n++)
             {
                 renderer.sprite = animations[n];
                 yield return new WaitForSecondsRealtime(0.1f);
                
             }
+            //at the end of loop, show endmenu/deathmenu
             SceneManager.LoadScene("EndMenu");
             yield return null;
 

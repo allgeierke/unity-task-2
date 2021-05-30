@@ -83,9 +83,11 @@ namespace Scripts
 
         private IEnumerator JumpAnimation()
         {
+            //start loop and use animation at index n
             for (int n = 6; n <= 10; n++)
             {
                 renderer.sprite = animations[n];
+                //wait
                 yield return new WaitForSecondsRealtime(0.1f);
             }
 
@@ -102,6 +104,7 @@ namespace Scripts
             // jump movement calculated by body's velocity and chosen jump force
             attachedPlayer.GetComponent<PlayerControl>().body.velocity = new Vector2(currentVelocity, jumpForce);
 
+            // if not in the air, stop the coroutine
             if (!isAirborne) StopCoroutine(Jump());
             
             yield return null;
