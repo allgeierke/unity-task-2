@@ -162,6 +162,7 @@ namespace Scripts
         {
             //disables movement
             playerActing = false;
+            techBoots.GetComponent<BootsControl>().enabled= false;
             //halfs the velocity
             body.velocity /= 2;
             body.constraints = RigidbodyConstraints2D.None;
