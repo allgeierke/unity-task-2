@@ -162,7 +162,7 @@ namespace Scripts
             for (int n = 14; n <= 21; n++)
             {
                 renderer.sprite = animations[n];
-                yield return new WaitForSecondsRealtime(0.2f);
+                yield return new WaitForSecondsRealtime(0.1f);
                
             }
             SceneManager.LoadScene("EndMenu");
