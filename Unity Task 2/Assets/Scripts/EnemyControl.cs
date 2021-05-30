@@ -30,6 +30,9 @@ public class EnemyControl : MonoBehaviour
 
     public Animator anim;
     
+    private Vector3 characterScale;
+    private float xsize;
+    
    /* public float moveSpeed = 3f;
     Transform leftWay, rightWay;
     Vector3 localScale;
@@ -44,6 +47,9 @@ public class EnemyControl : MonoBehaviour
         direction = 1;
         time = 0;
         body.velocity = new Vector2(direction * speed * Time.deltaTime, body.velocity.y);
+        
+        characterScale = transform.localScale;
+        xsize = characterScale.x;
 
 
         /* localScale = transform.localScale;
@@ -91,9 +97,7 @@ public class EnemyControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // save character's scale in variable
-        Vector3 characterScale = transform.localScale;
-    
+
         // calculates movement with the given x input, the chosen player speed & the body's current velocity
         //if (time % 5 == 0)
         
@@ -101,18 +105,17 @@ public class EnemyControl : MonoBehaviour
         // turn enemy sprite left if facing left
         if (direction > 0)
         {
-            characterScale.x = -5;
+            characterScale.x = xsize * -1;
         }
-        // turn right if facing right
+        // turn right if going right
         else if (direction < 0)
         {
-            characterScale.x = 5;
+            characterScale.x = xsize;
         }
         
         // update character scale
         transform.localScale = characterScale;
         
-        Debug.Log(direction);
         time ++;
 /*
         if (transform.position.x > rightWay.position.x)

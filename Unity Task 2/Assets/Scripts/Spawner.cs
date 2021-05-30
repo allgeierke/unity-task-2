@@ -31,16 +31,15 @@ public class Spawner : MonoBehaviour
         if (triggered)
         {
             // amount and timerate of spawning enemies
-            if (amount <= 5)
+            if (amount <= 2)
             {
                 if (Time.time > nextSpawn)
                 {
                     
                     //where/when enemies spawn
                     nextSpawn = Time.time + spawnRate;
-                    randomX = Random.Range(26, 36);
-                    Debug.Log(randomX);
-                    whereToSpawn = new Vector2(randomX + 5, transform.position.y);
+                    randomX = Random.Range(40, 43);
+                    whereToSpawn = new Vector2(randomX, transform.position.y-3.7f);
                     Instantiate(enemy, whereToSpawn, Quaternion.identity);
                     amount++;
                 }
@@ -53,7 +52,7 @@ public class Spawner : MonoBehaviour
 
    private void OnTriggerEnter2D(Collider2D other)
    {
-       if (other.CompareTag("Spawner")) ;
+       if (other.CompareTag("Player")) ;
         triggered = true;
     }
    
