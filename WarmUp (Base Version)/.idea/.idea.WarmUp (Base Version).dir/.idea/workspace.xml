@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b8c7c145-3dc6-450d-a03d-9b48afa3e6cf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../Unity Task 2/Assets/Scripts/EnemyControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Unity Task 2/Assets/Scripts/EnemyControl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Unity Task 2/Assets/Sprites/FinalBoss.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/../Unity Task 2/Assets/Sprites/FinalBoss.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

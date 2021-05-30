@@ -23917,7 +23917,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 2012521007}
   highscoreText: {fileID: 1410031822}
-  collectSound: {fileID: 0}
+  collectSound: {fileID: 1811442144}
 --- !u!1 &328303969
 GameObject:
   m_ObjectHideFlags: 0
@@ -69630,7 +69630,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e5fda031ebd4a40809db60d79702dd99, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

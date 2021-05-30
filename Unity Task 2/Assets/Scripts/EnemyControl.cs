@@ -85,7 +85,7 @@ public class EnemyControl : MonoBehaviour
 
     private IEnumerator EnemyDeath()
     {
-        deathSound.Play();
+        if (deathSound != null) deathSound.Play();
         anim.speed = 0;
         enemyActing = false;
         body.gravityScale = 0;
