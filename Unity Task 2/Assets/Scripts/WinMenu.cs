@@ -9,6 +9,7 @@ public class WinMenu : MonoBehaviour
     public GameObject GameWin;
     // Start is called before the first frame update
     
+    //Game stops (and we win)
     public void End()
     {
    
@@ -17,12 +18,15 @@ public class WinMenu : MonoBehaviour
       
     }
 
+    //Play again button starts our game from beginning
     public void PlayAgain()
     {
         //  GameEnd.SetActive(false);
         Time.timeScale = 1f;
         SceneManager.LoadScene("Level1");
     }
+    
+    //Main menu button shows our main menu
     public void Menu()
     {
         Time.timeScale = 1f;

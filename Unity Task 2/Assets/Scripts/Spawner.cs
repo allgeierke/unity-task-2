@@ -37,7 +37,7 @@ public class Spawner : MonoBehaviour
                 if (Time.time > nextSpawn)
                 {
                     
-                    //where enemies spawn
+                    //where/when enemies spawn
                     nextSpawn = Time.time + spawnRate;
                     //random x value on the plattform
                     randomX = Random.Range(40, 43);
