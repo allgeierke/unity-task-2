@@ -42,7 +42,7 @@ public class Spawner : MonoBehaviour
                     //random x value on the plattform
                     randomX = Random.Range(40, 43);
                     //location for the prefab to spawn
-                    whereToSpawn = new Vector2(randomX, transform.position.y-3.7f);
+                    whereToSpawn = new Vector2(randomX, transform.position.y-5f);
                     //spawn it
                     Instantiate(enemy, whereToSpawn, Quaternion.identity);
                     //increase amount/counter for the maximum amount comparison
