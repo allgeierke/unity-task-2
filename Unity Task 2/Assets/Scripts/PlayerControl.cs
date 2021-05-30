@@ -11,29 +11,35 @@ namespace Scripts
     {
         // determines if player input is accepted
         public bool playerActing;
+
         // determines character scale
         public Vector3 characterScale;
+
         //handles depiction of the player character's sprite
         public SpriteRenderer renderer;
+
         // collection of all used sprites for player animation
         [SerializeField] public Sprite[] animations;
+
         //handles physics of the player character's body
         public Rigidbody2D body;
+
         // speed of the player character
         [SerializeField] public float speed;
-        
+
         // left/right movement determined by player input
         public float moveInput;
-       
+
         // determines area of player feet for ground collision detection
-        public GameObject techBoots; 
-       
+        public GameObject techBoots;
+
         public LayerMask jumpableFoes;
+
         // variable for counting updates
         public float time;
-        
+
         // (Unity functions sorted by order of execution)
-        
+
         // initialization of player object
         private void Start()
         {
@@ -42,39 +48,41 @@ namespace Scripts
             speed = 200;
             moveInput = 0;
         }
-        
+
         // physics
         private void FixedUpdate()
         {
             // calculates movement with the given x input, the chosen player speed & the body's current velocity
             body.velocity = new Vector2(moveInput * speed * Time.deltaTime, body.velocity.y);
         }
-        
+
         // player input & visuals
         private void Update()
         {
-            if (playerActing) {
-            // save character's scale in variable
-            characterScale = transform.localScale;
-            
-            // (for our Input loads, Unity delivers pre-existing key inputs, which fit the player action)
-            //determines player movement on x axis based on adequate key input (e.g. A, D)
-            moveInput = Input.GetAxisRaw("Horizontal");
-            
-          
-                    if (techBoots.GetComponent<BootsControl>().IsAirborne() == false) {
-                // load idle animation
-                StartCoroutine(Idle());
-                
-                // if the player moves in either direction
-                if (Input.GetAxisRaw("Horizontal") != 0)
+            if (playerActing)
+            {
+                // save character's scale in variable
+                characterScale = transform.localScale;
+
+                // (for our Input loads, Unity delivers pre-existing key inputs, which fit the player action)
+                //determines player movement on x axis based on adequate key input (e.g. A, D)
+                moveInput = Input.GetAxisRaw("Horizontal");
+
+
+                if (techBoots.GetComponent<BootsControl>().IsAirborne() == false)
                 {
-                    // animate movement
-                    StartCoroutine(Move());
-                    
-                }
-                
+                    // load idle animation
+                    StartCoroutine(Idle());
+
+                    // if the player moves in either direction
+                    if (Input.GetAxisRaw("Horizontal") != 0)
+                    {
+                        // animate movement
+                        StartCoroutine(Move());
+
                     }
+
+                }
 
                 // turn player sprite left if facing left
                 if (Input.GetAxis("Horizontal") < 0)
@@ -88,11 +96,11 @@ namespace Scripts
                 }
 
                 // update character scale
-            transform.localScale = characterScale;
+                transform.localScale = characterScale;
 
-            // update update method call timer
-            time += 10 * Time.deltaTime;
-            
+                // update update method call timer
+                time += 10 * Time.deltaTime;
+
             }
 
         }
@@ -121,13 +129,14 @@ namespace Scripts
                 if ((int) time % 10 == n) renderer.sprite = animations[(int) (time % 5)];
 
             }
+
             yield return null;
         }
 
 
         public void OnTriggerEnter2D(Collider2D other)
         {
-            Collider2D bootsTouchEnemy = Physics2D.OverlapCircle(techBoots.transform.position, 0.5f, jumpableFoes);
+            Collider2D bootsTouchEnemy = Physics2D.OverlapCircle(techBoots.transform.position, 0.3f, jumpableFoes);
 
             if (bootsTouchEnemy == null && other.CompareTag("Enemy") && playerActing == true)
             {
@@ -138,12 +147,12 @@ namespace Scripts
                 playerWin();
             }
         }
-        
-        private void playerWin() 
-            {
-                SceneManager.LoadScene("WinMenu");
-            }
-        
+
+        private void playerWin()
+        {
+            SceneManager.LoadScene("WinMenu");
+        }
+
         private IEnumerator PlayerDeath()
         {
             playerActing = false;
@@ -154,12 +163,11 @@ namespace Scripts
             {
                 renderer.sprite = animations[n];
                 yield return new WaitForSecondsRealtime(0.2f);
+               
             }
-            yield return new WaitForSecondsRealtime(2f);
             SceneManager.LoadScene("EndMenu");
             yield return null;
+
         }
-        
-        
     }
 }

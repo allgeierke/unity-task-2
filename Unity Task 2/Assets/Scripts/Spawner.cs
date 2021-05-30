@@ -13,6 +13,7 @@ public class Spawner : MonoBehaviour
     
 
     public float spawnRate = 2f;
+    public int maximumAmount;
 
     float nextSpawn = 0.0f;
     bool triggered = false; 
@@ -31,7 +32,7 @@ public class Spawner : MonoBehaviour
         if (triggered)
         {
             // amount and timerate of spawning enemies
-            if (amount <= 2)
+            if (amount <= maximumAmount)
             {
                 if (Time.time > nextSpawn)
                 {
