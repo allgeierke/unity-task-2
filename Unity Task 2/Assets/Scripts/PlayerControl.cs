@@ -139,7 +139,7 @@ namespace Scripts
         {
             Collider2D bootsTouchEnemy = Physics2D.OverlapCircle(techBoots.transform.position, 0.3f, jumpableFoes);
             //If boots dont hit enemy but you collide with one, then..
-            if (bootsTouchEnemy == null && other.CompareTag("Enemy") && playerActing == true)
+            if (bootsTouchEnemy == null && (other.CompareTag("Enemy") || other.CompareTag("Water") ) && playerActing == true)
             {
                 //start PlayerDeath coroutine
                 StartCoroutine("PlayerDeath");

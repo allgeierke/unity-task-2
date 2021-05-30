@@ -9,6 +9,7 @@ TagManager:
   - Spawner
   - Coin
   - Portal
+  - Water
   layers:
   - Default
   - TransparentFX
