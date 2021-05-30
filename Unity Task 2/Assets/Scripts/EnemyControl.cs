@@ -90,7 +90,7 @@ public class EnemyControl : MonoBehaviour
         enemyActing = false;
         body.gravityScale = 0;
         body.constraints = RigidbodyConstraints2D.None;
-        body.velocity = new Vector2(body.velocity.x, body.velocity.y-0.2f);
+        body.velocity = new Vector2(body.velocity.x, body.velocity.y-0.5f);
         collider.isTrigger = false;
         enemySprite.color = Color.red;
         this.enabled = false;
